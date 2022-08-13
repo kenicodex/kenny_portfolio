@@ -12,13 +12,13 @@ function App() {
           sx={{height: "400px", color: "white", pt:"150px",backgroundSize:"cover",backgroundRepeat:"no-repaet", backgroundColor:"", backgroundBlendMode:"",
           backgroundImage:"url(https://img.freepik.com/premium-photo/young-programmers_236854-21690.jpg?size=626&ext=jpg&ga=GA1.2.1618634385.1660341906)", opacity: ".7", }} >
           Hey there, I'm <strong style={{ color: "black", }}>Kenny</strong> <br />
-          <a href=" https://wa.me/08085503290?text=I'm%20interested%20in%20your%20web%20services.%20My%20name%20is%20_______">
+          <a href="https://wa.me/+2348085503290?text=I'm%20interested%20in%20your%20web%20services.%20My%20name%20is%20_______">
           <Button variant='white'><i style={{ fontSize: "50px" }} class="fa fa-whatsapp"></i> </Button></a>
-          <a href="tel+2348056499531"><Button variant='white'> <i style={{ fontSize: "50px" }} class="fa fa-phone"></i></Button></a>
+          <a href="https://tel+2348056499531"><Button variant='white'> <i style={{ fontSize: "50px" }} class="fa fa-phone"></i></Button></a>
             <a href="mailto:kehindesalaudeen222@gmail.com"><Button variant='white'> <i style={{ fontSize: "50px" }} class="fa fa-envelope"></i> </Button></a>
         </Box>
         <Box sx={{ position:"absolute", top:"", backgroundColor: "lightgrey", mx: { xs: "auto", lg: "100px" } }} >
-          <Typography fontSize={{ xs: "40px", lg: "60px" }} fontWeight="300" sx={{ pt: "30px", }} fontFamily="martel">
+          <Typography fontSize={{ xs: "40px", lg: "60px" }} fontWeight="300" sx={{ pt: "30px", px:{xs:"20px"} }} fontFamily="martel">
             Frontend Web Developer
           </Typography>
           <Typography fontSize={{ xs: "30px", lg: "40px" }} fontWeight="300" sx={{ pt: "30px", }} fontFamily="martel">
