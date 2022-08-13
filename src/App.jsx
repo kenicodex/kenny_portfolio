@@ -5,7 +5,7 @@ import { Box, Typography, Button } from '@mui/material';
 function App() {
   return (
     <Box sx={{ textAlign: "center" }}>
-      <Box sx={{ backgroundColor: "white", }} >
+      <Box sx={{ backgroundColor: "white" }} >
       {/* <Box sx={{ width: "100vw", height: "400px", zIndex: "100" }} >
             <img src="" width="100%" height="100%" alt="" /></Box> */}
         <Box fontSize={{ xs: "70px", lg: "100px",color:"inherit" }} fontWeight="800" fontFamily="martel" letterSpacing="5px" className='a'
