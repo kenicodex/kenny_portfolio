@@ -29,7 +29,7 @@ function App(params) {
 
                 <BrowserRouter>
                     <Routes>
-                        <Route path="/" element={<Portfolio />} exact />
+                        <Route  path="/" element={<Portfolio />} exact />
                         <Route path="/todolist" element={<Todolist />} />
                         {/* <Route path="/landingpage" element={<Portfolio />}  /> */}
 

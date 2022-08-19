@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/todolist"
+  to = "/index.html"
+  status = 200
