@@ -1,0 +1,10 @@
+.check{
+    content: '';
+    display: block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: solid #0079bf;
+    border-width: 0 2px 2px 0;
+    margin-top: 7px;
+  }
