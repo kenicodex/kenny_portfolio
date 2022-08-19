@@ -17,6 +17,9 @@ function Portfolio() {
           <Button variant='white'><i style={{ fontSize: "50px" }} class="fa fa-whatsapp"></i> </Button></a>
           <a href="https://tel+2348056499531"><Button variant='white'> <i style={{ fontSize: "50px" }} class="fa fa-phone"></i></Button></a>
             <a href="mailto:kehindesalaudeen222@gmail.com"><Button variant='white'> <i style={{ fontSize: "50px" }} class="fa fa-envelope"></i> </Button></a>
+       <br /> <Button onClick={()=>{window.location.assign("/todolist")}} sx={{color:"black",fontSize:"30px" }}>
+          View Todolist
+        </Button>
         </Box>
         <Box sx={{ position:"absolute", top:"", backgroundColor: "lightgrey", mx: { xs: "auto", lg: "100px" } }} >
           <Typography fontSize={{ xs: "40px", lg: "60px" }} fontWeight="300" sx={{ pt: "30px", px:{xs:"20px"} }} fontFamily="martel">
