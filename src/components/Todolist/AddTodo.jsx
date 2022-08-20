@@ -10,7 +10,7 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: {xs:"75%",lg:400},
     bgcolor: 'background.paper',
     borderRadius: "10px",
     boxShadow: 24,
@@ -44,7 +44,7 @@ export default function AddTodo() {
 
     return (
         <div>
-            <AddCircleIcon onClick={handleOpen} sx={{ position: "absolute", bottom: "5%", width: "50px", height: "50px", color: "green", p: "30px", borderRadius: "100%", left: "46%" }} />
+            <AddCircleIcon onClick={handleOpen} sx={{ position: "absolute", bottom: "5%", width: "50px", height: "50px", color: "green", p: "30px", borderRadius: "100%", left: {xs:"40%",lg:"46%"} }} />
 
             <Modal
                 open={open}
