@@ -5,10 +5,23 @@ import { movies } from "./moviedata";
 
 function Movies(params) {
     const [move, setMove] = useState([])
+    const genrepicks = ["Comedy",
+        "Fantasy",
+        "Crime",
+        "Drama",
+        "Adventure",
+        "Thriller",
+        "Animation",
+        "Family",
+        "Mystery",
+        "Action",
+        "Romance",
+        "Sci-Fi",
+        "Horror",]
     useEffect(() => {
         setMove(movies.movies)
     }, [move])
-    const card = { height: 200, cursor:"pointer", position: "relative", }
+    const card = { height: 200, cursor: "pointer", position: "relative", }
     return (
         <Box>
             <Navbar />
@@ -31,13 +44,13 @@ function Movies(params) {
                 mx: { xs: "2.5%", lg: "1%" }, width: { xs: "95%", lg: "98%" }, display: "grid", mt: "10px",
                 gridTemplateColumns: { xs: "repeat(3, auto)", lg: "repeat(7, auto)" }, gridGap: "10px"
             }} className="bg-light">
-
-                {move.filter(x => x.year > 2000 ).map(({ id, title, posterUrl, year }) => {
+                {movies.genres.map}
+                {move.filter(x => x.genres.includes("Comedy")).map(({ id, title, posterUrl, year, genres }) => {
                     return (
-                        <Box sx={card} className="border rounded shadow bg-white" onClick={()=>{window.location.assign('/movie?id='+id+"-"+title)}}>
+                        <Box sx={card} className="border rounded shadow bg-white text-dark" onClick={() => { window.location.assign('/movie?id=' + id + "&title=" + title) }}>
                             <img src={posterUrl} alt="network" width="100%" height="100%" className="rounded" />
-                            <Typography sx={{ position: "absolute", top: "60%", pl: "5px", fontSize: "16px", fontWeight: "600", color: "white" }}>
-                                {title} {year}
+                            <Typography sx={{ position: "absolute", top: "60%", pl: "5px", fontSize: "16px", fontWeight: "600", }}>
+                                {title} {year} {genres.length}
                             </Typography>
                         </Box>
                     )
