@@ -7,9 +7,10 @@ import todoReducer from './redux/reducers'
 import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import { persistReducer /* , persistStore */ } from "redux-persist";
+import Movies from "./components/Movies/Movies.jsx";
+import Movie from "./components/Movies/movie";
 // import { PersistGate } from "redux-persist/integration/react";
 // import thunk from 'redux-thunk';
-
 function App(params) {
     const persistConfig = {
         key: 'todo',
@@ -19,22 +20,20 @@ function App(params) {
     const persisReducer = persistReducer(persistConfig, todoReducer)
     const store = configureStore({
         reducer: persisReducer,
-        // devTools: process.env.NODE_ENV !== 'production',
-        // middleware: [thunk]
     })
-    // const persistor = persistStore(store)
     return (
         <Provider store={store}>
             {/* <PersistGate persistor={persistor}> */}
 
-                <BrowserRouter>
-                    <Routes>
-                        <Route  path="/" element={<Portfolio />} exact />
-                        <Route path="/todolist" element={<Todolist />} />
-                        {/* <Route path="/landingpage" element={<Portfolio />}  /> */}
-
-                    </Routes>
-                </BrowserRouter>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Portfolio />} exact />
+                    <Route path="/todolist" element={<Todolist />} />
+                    <Route path="/movies" element={<Movies />} />
+                    <Route path="/movie" element={<Movie />} />
+                    {/* <Route path="/landingpage" element={<Portfolio />}  /> */}
+                </Routes>
+            </BrowserRouter>
             {/* </PersistGate> */}
         </Provider>
     )

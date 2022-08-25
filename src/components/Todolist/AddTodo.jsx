@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Modal from '@mui/material/Modal';
-import { Divider, TextField, Box, Button, Typography } from '@mui/material';
+import { Divider, TextField, Box, Button, Typography, Grow } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useDispatch } from 'react-redux'
 import { addTodo } from '../../redux/action'
@@ -10,7 +10,7 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: {xs:"75%",lg:400},
+    width: { xs: "75%", lg: 400 },
     bgcolor: 'background.paper',
     borderRadius: "10px",
     boxShadow: 24,
@@ -27,9 +27,9 @@ export default function AddTodo() {
     const dispatch = useDispatch()
     const typing = (e) => {
         setItem(e.target.value)
-        if(e.target.value.length > 0){
+        if (e.target.value.length > 0) {
             setDisplay("1")
-        }else {
+        } else {
             setDisplay("0")
         }
     }
@@ -44,8 +44,11 @@ export default function AddTodo() {
 
     return (
         <div>
-            <AddCircleIcon onClick={handleOpen} sx={{ position: "absolute", bottom: "5%", width: "50px", height: "50px", color: "green", p: "30px", borderRadius: "100%", left: {xs:"40%",lg:"46%"} }} />
-
+            <Box sx={{ width: "100%", position: "absolute", left: "0", zIndex: "1000", bottom: "2%", textAlign: "center" }}>
+                <Grow in={true} timeout={2000}>
+                    <AddCircleIcon onClick={handleOpen} sx={{ color: "green" }} />
+                </Grow>
+            </Box>
             <Modal
                 open={open}
                 onClose={handleClose}
