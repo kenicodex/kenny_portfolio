@@ -5,19 +5,7 @@ import { movies } from "./moviedata";
 
 function Movies(params) {
     const [move, setMove] = useState([])
-    const genrepicks = ["Comedy",
-        "Fantasy",
-        "Crime",
-        "Drama",
-        "Adventure",
-        "Thriller",
-        "Animation",
-        "Family",
-        "Mystery",
-        "Action",
-        "Romance",
-        "Sci-Fi",
-        "Horror",]
+    const genrepicks = ["Comedy", "Sci-Fi", "Crime", "Drama", "Adventure", "Animation", "Family", "Mystery", "Action", "Romance", "Horror"]
     useEffect(() => {
         setMove(movies.movies)
     }, [move])
@@ -40,11 +28,32 @@ function Movies(params) {
                 <Slide direction="up" in={true} timeout={2000}><img src={process.env.PUBLIC_URL + "/images/watching.webp"} alt="" /></Slide>
             </Box>
             <Divider />
+            {genrepicks.map(category => {
+                return (
+                    <Box className="border rounded shadow" sx={{ m: '5px' }}>
+                        <Typography fontSize={"20px"} sx={{ p: "5px" }}>{category}</Typography>
+                        <Box sx={{
+                            mx: { xs: "2.5%", lg: "1%" }, width: { xs: "95%", lg: "98%" }, display: "grid", mt: "10px",
+                            gridTemplateColumns: { xs: "repeat(3, auto)", lg: "repeat(7, auto)" }, gridGap: "10px"
+                        }} className="bg-light">
+                            {move.filter(x => x.genres.includes("Comedy")).map(({ id, title, posterUrl, year, genres }) => {
+                                return (
+                                    <Box sx={card} className="border rounded shadow bg-white text-dark" onClick={() => { window.location.assign('/movie?id=' + id + "&title=" + title) }}>
+                                        <img src={posterUrl} alt="network" width="100%" height="100%" className="rounded" />
+                                        <Typography sx={{ position: "absolute", top: "60%", pl: "5px", fontSize: "16px", fontWeight: "600", }}>
+                                            {title} {year} {genres.length}
+                                        </Typography>
+                                    </Box>
+                                )
+                            })} </Box>
+                    </Box>
+                )
+            })}
             <Box sx={{
                 mx: { xs: "2.5%", lg: "1%" }, width: { xs: "95%", lg: "98%" }, display: "grid", mt: "10px",
                 gridTemplateColumns: { xs: "repeat(3, auto)", lg: "repeat(7, auto)" }, gridGap: "10px"
             }} className="bg-light">
-                {movies.genres.map}
+
                 {move.filter(x => x.genres.includes("Comedy")).map(({ id, title, posterUrl, year, genres }) => {
                     return (
                         <Box sx={card} className="border rounded shadow bg-white text-dark" onClick={() => { window.location.assign('/movie?id=' + id + "&title=" + title) }}>
