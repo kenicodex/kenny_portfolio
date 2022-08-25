@@ -8,7 +8,7 @@ function Movies(params) {
     useEffect(() => {
         setMove(movies.movies)
     }, [move])
-    const card = { height: 200, border: "2", borderRadius: "10px", position: "relative", }
+    const card = { height: 200, cursor:"pointer", position: "relative", }
     return (
         <Box>
             <Navbar />
@@ -19,7 +19,8 @@ function Movies(params) {
             }}>
                 <Box>
                     <Slide direction="down" in={true} timeout={2000}>
-                        <Typography component="div" fontSize={{ xs: "30px", lg: "60px" }} sx={{ mt: "150px"}} color="black" component='span'>Kenny Inc Movies</Typography></Slide>
+                        <Typography component="div" fontSize={{ xs: "30px", lg: "60px" }} sx={{ mt: "150px" }} color="black" >Kenny Inc Movies</Typography>
+                    </Slide>
                     <Typography color="black">
                         A project to created to show case a fake movie website
                     </Typography></Box>
@@ -31,21 +32,15 @@ function Movies(params) {
                 gridTemplateColumns: { xs: "repeat(3, auto)", lg: "repeat(7, auto)" }, gridGap: "10px"
             }} className="bg-light">
 
-                {move.map(({ id, title, posterUrl, year }) => {
-                    // var tester = new Image();
-                    // tester.src = posterUrl
-                    // tester.addEventListener('load', () => {
-                    if (year > 2000) {
-                        return (
-                            <Box sx={card} className="border shadow bg-white">
-                                <img src={posterUrl} alt="network" width="100%" height="100%" className="rounded" />
-                                <Typography sx={{ position: "absolute", top: "60%", pl: "5px", fontSize: "16px", fontWeight: "600", color: "white" }}>
-                                    {title} {year}
-                                </Typography>
-                            </Box>
-                        )
-                    }
-                    // })
+                {move.filter(x => x.year > 2000 ).map(({ id, title, posterUrl, year }) => {
+                    return (
+                        <Box sx={card} className="border rounded shadow bg-white" onClick={()=>{window.location.assign('/movie?id='+id+"-"+title)}}>
+                            <img src={posterUrl} alt="network" width="100%" height="100%" className="rounded" />
+                            <Typography sx={{ position: "absolute", top: "60%", pl: "5px", fontSize: "16px", fontWeight: "600", color: "white" }}>
+                                {title} {year}
+                            </Typography>
+                        </Box>
+                    )
                 })}
             </Box>
         </Box>
