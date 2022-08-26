@@ -2,3 +2,10 @@
   from = "/todolist"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/movies id=:id"
+  to = "/movie/:id"
+  status = 301
+
+      

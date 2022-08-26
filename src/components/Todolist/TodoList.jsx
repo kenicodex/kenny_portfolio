@@ -28,13 +28,13 @@ export default function TodoList() {
         <React.Fragment>
             <Navbar /> 
             <Container sx={{ border: "1px solid gray", width: { xs: "90%", lg: "500px" }, borderRadius: "10px", m: { xs: "5vh 5%", lg: "5vh auto" }, height: "90vh", boxShadow: "3" }}>
-                <Typography sx={{ textAlign: "center", my: "20px" }} fontSize="40px" fontFamily={"Marterl"} onClick={() => { show() }}>
+                <Typography sx={{ textAlign: "center", my: "20px" }} fontSize="40px" fontFamily={"open sans"} onClick={() => { show() }}>
                     {message}
                 </Typography>
                 {todo.length > 0 ? todo.map(({ id, item, done, date }, i) => {
                     return (
                         <Box key={i} sx={{ borderRadius: "20px", boxShadow: "3", width: "92%", mx: "4%", mt: "5px", py: "10px", display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
-                            <Typography fontSize="20px" fontFamily="cursive" sx={{ textDecoration: !done ? "" : "line-through", mx: " 20px ", color: done ? 'gray' : 'black' }}>
+                            <Typography fontSize="20px" fontFamily="open sans" sx={{ textDecoration: !done ? "" : "line-through", mx: " 20px ", color: done ? 'gray' : 'black' }}>
                                 {item}
                             </Typography>
                             <Box sx={{ position: "relative", right: "20px", display: "flex", justifyContent: 'space-between' }}>

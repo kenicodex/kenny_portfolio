@@ -34,11 +34,11 @@ export default function AddTodo() {
         }
     }
     const chevk = () => {
-        // if(item.length > 3){
-        dispatch(addTodo(item))
-        // }else{
-        // alert("most be more than 3 words")
-        // }
+        if (item.length > 3) {
+            dispatch(addTodo(item))
+        } else {
+            alert("most be more than 3 words")
+        }
         setItem("")
     }
 
@@ -46,7 +46,7 @@ export default function AddTodo() {
         <div>
             <Box sx={{ width: "100%", position: "absolute", left: "0", zIndex: "1000", bottom: "2%", textAlign: "center" }}>
                 <Grow in={true} timeout={2000}>
-                    <AddCircleIcon onClick={handleOpen} sx={{ color: "green" }} />
+                    <AddCircleIcon onClick={handleOpen} sx={{ color: "green", width:"40px", height:"40px"}} />
                 </Grow>
             </Box>
             <Modal
