@@ -9,6 +9,7 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer /* , persistStore */ } from "redux-persist";
 import Movies from "./components/Movies/Movies.jsx";
 import Movie from "./components/Movies/movie";
+import Store from "./components/ecommerce/Home";
 // import { PersistGate } from "redux-persist/integration/react";
 // import thunk from 'redux-thunk';
 function App(params) {
@@ -24,14 +25,13 @@ function App(params) {
     return (
         <Provider store={store}>
             {/* <PersistGate persistor={persistor}> */}
-
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Portfolio />} exact />
                     <Route path="/todolist" element={<Todolist />} />
                     <Route path="/movies" element={<Movies />} />
                     <Route path="/movie" element={<Movie />} />
-                    {/* <Route path="/landingpage" element={<Portfolio />}  /> */}
+                    <Route path="/fakestore" element={<Store />}  />
                 </Routes>
             </BrowserRouter>
             {/* </PersistGate> */}

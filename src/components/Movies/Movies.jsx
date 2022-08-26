@@ -41,9 +41,6 @@ function Movies(params) {
                                      minWidth:{xs:"100px",lg:"150px"}, width: {xs:"100px",lg:"150px"}, maxWidth:{xs:"100px",lg:"150px"}, position:"relative"  }} 
                                      className="border rounded-lg shadow bg-white text-dark " onClick={() => { window.location.assign('/movie?id=' + id /*+ "&title=" + title*/) }}>
                                         <img src={posterUrl} alt="network" width="100%" height="100%" className="rounded" />
-                                        {/* <Typography sx={{ position: "absolute", top: "60%", pl: "5px", fontSize: "16px", fontWeight: "600", }}>
-                                            {title} {year}
-                                        </Typography> */}
                                     </Box>
                                 )
                             })}
