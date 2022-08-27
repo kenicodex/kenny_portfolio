@@ -8,13 +8,10 @@
   status = 200
 [[redirects]]
   from = "/movie"
-  to = "index.html"
+  to = "/index.html"
   status = 302
   query = {id = ":id"}
 [[redirects]]
   from = "/fakestore"
-  to = "index.html"
+  to = "/index.html"
   status = 200
- 
-
-      
