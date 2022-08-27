@@ -9,7 +9,7 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer /* , persistStore */ } from "redux-persist";
 import Movies from "./components/Movies/Movies.jsx";
 import Movie from "./components/Movies/movie";
-import Store from "./components/ecommerce/Home";
+import Store from "./components/ecommerce/Home/Home";
 // import { PersistGate } from "redux-persist/integration/react";
 // import thunk from 'redux-thunk';
 function App(params) {

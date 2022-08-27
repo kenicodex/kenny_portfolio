@@ -22,28 +22,30 @@ function Portfolio() {
       <Navbar />
       {/* <Grow in={true} timeout={2000}> */}
       <Box fontSize={{ xs: "40px", lg: "70px" }} fontFamily="martel" letterSpacing="5px" className='a'
-        sx={{ height: { xs: "auto", md: "100vh" }, color: "black", display: "flex", flexDirection: { xs: "column", lg: "row-reverse" }, justifyContent: "space-around" }} >
-        <Grow in={true} timeout={2000}><img className="w-sm-100 pt-4 w-lg-50 theimg" src={process.env.PUBLIC_URL + '/images/developer.webp'} alt="" /></Grow>
+        sx={{ height: { xs: "500px", md: "100vh" }, color: "white", display: "flex", flexDirection: { xs: "column", lg: "row-reverse" }, justifyContent: "space-around"
+        , backgroundImage:"url(https://images.unsplash.com/photo-1629904853716-f0bc54eea481?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)",
+        backgroundPosition:"center", backgroundSize:"cover",backgroundRepeat:"no-repeat" }} >
+        {/* <Grow in={true} timeout={2000}><img className="w-sm-100 pt-4 w-lg-50 theimg" src={process.env.PUBLIC_URL + '/images/developer.webp'} alt="" /></Grow> */}
         <Box sx={{ mt: "80px", width: { xs: "100%", lg: "50%" }, pl: { xs: "20px", lg: "200px" }, textAlign: { xs: "left", lg: "left" } }} >
           <Slide direction='right' in={true} timeout={2000} children={'div'}>
             <Typography ref={ref} fontSize={{ xs: "30px", lg: "45px" }} fontWeight="600" letterSpacing="5px"> Hey there, {bool}</Typography></Slide>
           <Grow in={true} timeout={3000}>
             <Typography className='text-primary' fontSize={{ xs: "40px", lg: "55px" }} letterSpacing="5px" fontWeight="600">I'm Kenny</Typography></Grow>
           {/* <Slide direction='left' in={true} timeout={2000} ><Button variant='outline' onClick={() => { window.location.assign("/todolist") }} sx={{ fontSize: "30px" }} className="btn-outline btn-outline-primary">
-            View Projects
+            Click to like my website
           </Button></Slide> */}
           <div className='pb-2'>
             <Fade in={true} timeout={2000}><a href="https://wa.me/+2348085503290?text=I'm%20interested%20in%20your%20web%20services.%20My%20name%20is%20_______">
-              <Button variant='white'><i style={{ fontSize: "50px" }} class="fa fa-whatsapp"></i> </Button></a></Fade>
-            <Fade in={true} timeout={2000}><a href="https://tel+2348056499531"><Button variant='white'> <i style={{ fontSize: "50px" }} class="fa fa-phone"></i></Button></a></Fade>
-            <Fade in={true} timeout={2000}><a href="https://github.com/kenicodex"><Button variant='white'> <i style={{ fontSize: "50px" }} class="fa fa-github"></i></Button></a></Fade>
-            <Fade in={true} timeout={2000}><a href="mailto:kehindesalaudeen222@gmail.com"><Button variant='white'> <i style={{ fontSize: "50px" }} class="fa fa-envelope"></i> </Button></a></Fade>
+              <Button variant='white' sx={{fontSize: {xs:"30px",lg:"50px"}}}><i class="fa fa-whatsapp"></i> </Button></a></Fade>
+            <Fade in={true} timeout={2000}><a href="https://tel+2348056499531"><Button variant='white' sx={{fontSize: {xs:"30px",lg:"50px"}}}> <i class="fa fa-phone"></i></Button></a></Fade>
+            <Fade in={true} timeout={2000}><a href="https://github.com/kenicodex"><Button variant='white' sx={{fontSize: {xs:"30px",lg:"50px"}}}> <i class="fa fa-github"></i></Button></a></Fade>
+            <Fade in={true} timeout={2000}><a href="mailto:kehindesalaudeen222@gmail.com"><Button variant='white' sx={{fontSize: {xs:"30px",lg:"50px"}}}> <i class="fa fa-envelope"></i> </Button></a></Fade>
           </div>
         </Box>
       </Box>
       {/* </Grow> */}
       <Divider />
-      <Box sx={{ height: "100vh", position: "relative", display: "flex", flexDirection: "column", justifyContent: "center" }} className='bg-white text-center'>
+      <Box sx={{ height: "70vh", position: "relative", display: "flex", flexDirection: "column", justifyContent: "center" }} className='bg-white text-center'>
         <Slide direction='up' in={bool[0]} timeout={2000}>
           <Typography fontSize={{ xs: "40px", lg: "60px" }} fontWeight="300" sx={{ pt: "30px", px: { xs: "20px" } }} fontFamily="martel">
             Full Stack Web Developer
@@ -57,9 +59,9 @@ function Portfolio() {
         {/* <Slide direction='down' in={bool[0]} timeout={2000}> */}
         <Typography sx={{ my: "20px" }} id="projects">Here are some projects i'm working on</Typography>
         <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "space-evenly" }} >
-          <Link to="/todolist"><Button variant="outlined" color="success" className='m-1' sx={{ width: "150px" }}>Todolist</Button></Link>
-          <Link to="/movies"><Button variant="outlined" color="success" className='m-1' sx={{ width: "150px" }}>Movies</Button></Link>
-          <Link to="/fakestore"><Button variant="outlined" color="success" className='m-1' sx={{ width: "150px" }}>Ecommerce</Button></Link>
+          <Link to="/todolist"><Button variant="outlined" color="primary" className='m-1' sx={{ width: "150px" }}>Todolist</Button></Link>
+          <Link to="/movies"><Button variant="outlined" color="primary" className='m-1' sx={{ width: "150px" }}>Movies</Button></Link>
+          <Link to="/fakestore"><Button variant="outlined" color="primary" className='m-1' sx={{ width: "150px" }}>Ecommerce</Button></Link>
         </Box>
       </Box>
       <Divider />

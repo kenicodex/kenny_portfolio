@@ -7,12 +7,14 @@
   to = "/index.html"
   status = 200
 [[redirects]]
-  from = "/movie/:id"
+  from = "/movie"
+  to = "index.html"
+  status = 302
+  query = {id = ":id"}
+[[redirects]]
+  from = "/fakestore"
   to = "index.html"
   status = 200
-[[redirects]]
-  from = "/movies"
-  to = "/movie/:id"
-  status = 301  
+ 
 
       

@@ -25,7 +25,8 @@ export default function TodoList() {
         }, 5000);
     }
     return (
-        <React.Fragment>
+        <Box sx={{backgroundImage:"url(https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dG9kb3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60)"
+        , backgroundSize:"cover", backgroundAttachment:"fixed", backgroundPosition:"center", height:"100vh"}} >
             <Navbar /> 
             <Container sx={{ border: "1px solid gray", width: { xs: "90%", lg: "500px" }, borderRadius: "10px", m: { xs: "5vh 5%", lg: "5vh auto" }, height: "90vh", boxShadow: "3" }}>
                 <Typography sx={{ textAlign: "center", my: "20px" }} fontSize="40px" fontFamily={"open sans"} onClick={() => { show() }}>
@@ -46,7 +47,7 @@ export default function TodoList() {
                 }) : <Typography sx={{ textAlign: "center", pt: "25%", fontSize: "30px", fontWeight: "100" }}> Nothing to dispaly </Typography>}
                 <AddTodo />
             </Container>
-        </React.Fragment>
+        </Box>
 
     )
 }

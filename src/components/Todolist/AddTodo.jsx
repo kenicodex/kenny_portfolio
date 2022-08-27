@@ -15,6 +15,7 @@ const style = {
     borderRadius: "10px",
     boxShadow: 24,
     p: 4,
+    transition:"ease 2s"
 };
 
 export default function AddTodo() {
@@ -49,7 +50,7 @@ export default function AddTodo() {
                     <AddCircleIcon onClick={handleOpen} sx={{ color: "green", width:"40px", height:"40px"}} />
                 </Grow>
             </Box>
-            <Modal
+            <Modal sx={{transition:"ease 2s"}}
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
