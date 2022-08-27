@@ -7,8 +7,8 @@
   to = "/index.html"
   status = 200
 [[redirects]]
-  from = "/movie"
-  to = "/index.html"
+  from = "/movies"
+  to = "/movie"
   status = 302
   query = {id = ":id"}
 [[redirects]]
