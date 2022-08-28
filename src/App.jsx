@@ -11,6 +11,8 @@ import Movies from "./components/Movies/Movies.jsx";
 import Movie from "./components/Movies/movie";
 import Store from "./components/ecommerce/Home/Home";
 import SingleProduct from "./components/ecommerce/Product/Product";
+import Cart from "./components/ecommerce/Cart/Cart";
+// import Cart from "./components/ecommerce/Cart/Cart";
 // import { PersistGate } from "redux-persist/integration/react";
 // import thunk from 'redux-thunk';
 function App(params) {
@@ -34,6 +36,7 @@ function App(params) {
                     <Route path="/movie" element={<Movie />} />
                     <Route path="/fakestore" element={<Store />}  />
                     <Route path="/product" element={<SingleProduct />}  />
+                    <Route path="/cart" element={<Cart />}  />
                 </Routes>
             </BrowserRouter>
             {/* </PersistGate> */}
