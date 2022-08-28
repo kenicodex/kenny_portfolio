@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+.content-div {
+  width: 1300px;
+  margin: 0 auto;
+}
+/************************************************* Header Section ********************************/
+
+/***************************************************** HERO SECTION *******************************/
+.hero-sec {
+  height: auto;
+}
+.hero-row {
+  /* border: 2px solid red; */
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero-col {
+  /* border: 1px solid red; */
+  height: auto;
+  width: 45%;
+}
+.col2-wrapper {
+  /* border: 2px solid blue; */
+  width: 80%;
+}
+.main-heading {
+  font-size: 3rem;
+}
+.hero-subHeading {
+  color: var(--Orange);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+.dollar {
+  font-size: 1.5rem;
+  /* border: 1px solid firebrick; */
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+.discount {
+  background-color: var(--PaleOrange);
+  padding: 0.3rem 0.5rem;
+  border-radius: 5px;
+  font-weight: 700;
+}
+.discount2 {
+  display: block;
+}
+.hero-para {
+  color: var(--DarkGrayishBlue);
+  line-height: 1.4;
+}
+.hero-subHeading {
+  margin-bottom: 1.5rem;
+}
+.main-heading {
+  margin-bottom: 2rem;
+}
+.hero-para {
+  margin-bottom: 1.5rem;
+}
+.cart2-sec {
+  /* border: 2px solid red; */
+  width: 100%;
+  padding: 0rem;
+  display: flex;
+  justify-content: space-between;
+}
+.cart2-col1 {
+  width: 30%;
+}
+.cart2-col2 {
+  width: 65%;
+}
+.cart2-col {
+  background-color: var(--LightGrayishBlue);
+  padding: 0.3rem 0.5rem;
+  /* border: 2px solid black; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+.minus,
+.plus {
+  cursor: pointer;
+}
+.minus {
+  height: 3px;
+  width: 13px;
+  background-color: var(--Orange);
+}
+.minus:hover,
+.minus:active,
+.plus:hover,
+.plus:active,
+.cart2-btn:hover,
+.cart2-btn:active {
+  opacity: 0.8;
+}
+
+.cart2-values {
+  /* border: 1px solid blue; */
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  width: max-content;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.cart2-values {
+  padding: 0.2rem 2rem;
+}
+
+.cart2-col2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  background-color: transparent;
+}
+.cart2-btn {
+  /* width: inherit; */
+  border: none;
+  outline: none;
+  padding: 0.7rem 5rem;
+  /* border: 1px solid red; */
+  background-color: var(--Orange);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px 0.5px rgba(0, 0, 0, 0.404);
+}
+.cart2-main {
+  margin-right: 1rem;
+}
+.cart2-text {
+  font-size: 1.2rem;
+  color: white;
+}
+/************************************** Sneakers images **********************/
+
+.sneakers-div {
+  /* border: 2px solid yellow; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.mobile-prev,
+.mobile-next {
+  display: none;
+}
+.big-sneaker {
+  display: block;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.sneakers-col2 {
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  max-width: 440px;
+  justify-content: space-between;
+  /* border: 2px solid red; */
+}
+.small-sneaker-div {
+  width: max-content;
+  height: 80px;
+  background-color: white;
+  border-radius: 12px;
+}
+.small-sneaker-div.active-sneaker {
+  border: 2px solid var(--Orange);
+  height: 84px;
+}
+.small-sneaker {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: 80px;
+  border-radius: 10px;
+}
+.small-sneaker:hover {
+  opacity: 0.8;
+}
+.small-sneaker-div.active-sneaker .small-sneaker {
+  opacity: 0.5;
+}
+/************************************* lightBox Sneaker ******************************/
+
+/**************************************** Cart Box ************************/
+/*********************************************** MEDIA QUERIES ************************************/
+@media (max-width: 1300px) {
+  .content-div {
+    width: 98%;
+  }
+  .hero-row {
+    height: 90vh;
+  }
+  .col2-wrapper {
+    width: 90%;
+  }
+  .main-heading {
+    font-size: 2.7rem;
+  }
+  .dollar {
+    font-size: 1.3rem;
+  }
+  .discount,
+  .discount2 {
+    font-size: 0.9rem;
+  }
+  .hero-subHeading {
+    margin-bottom: 1.2rem;
+  }
+  .main-heading {
+    margin-bottom: 1.5rem;
+  }
+  .hero-para {
+    margin-bottom: 1.2rem;
+  }
+  .cart2-btn {
+    width: 90%;
+    padding: 0.7rem 2rem;
+  }
+  .sneakers-div {
+    height: 500px;
+  }
+  .big-sneaker {
+    max-width: 400px;
+  }
+
+  .sneakers-col2 {
+    max-width: 400px;
+  }
+  .small-sneaker-div {
+    height: 75px;
+  }
+  .small-sneaker-div.active-sneaker {
+    height: 75px;
+  }
+  .small-sneaker {
+    max-width: 70px;
+  }
+}
+@media (max-width: 960px) {
+
+  .cart2-btn {
+    padding: 0.7rem 0rem;
+  }
+}
+@media (max-width: 762px) {
+  .content-div {
+    /* border: 1px solid magenta; */
+    width: 80%;
+  }
+  .hero-sec {
+    height: auto;
+  }
+  .header-row {
+    justify-content: space-between;
+  }
+ 
+  /*********************** Hero Section ********/
+  .hero-row {
+    flex-direction: column;
+    height: auto;
+  }
+  .hero-col {
+    width: 100%;
+  }
+  .col2-wrapper {
+    margin: 0 auto;
+    width: 80%;
+  }
+  .main-heading {
+    font-size: 2.5rem;
+  }
+  .hero-para {
+    font-size: 1.2rem;
+  }
+  .dollar {
+    font-size: 1.5rem;
+  }
+  .discount2 {
+    float: right;
+    display: inline;
+  }
+  .cart2-sec {
+    margin-top: 2rem;
+    flex-direction: column;
+  }
+
+  .cart2-col {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+  .cart2-btn {
+    width: 100%;
+  }
+  .cart2-btn:hover {
+    opacity: 1;
+  }
+  .cart2-btn:active {
+    opacity: 0.8;
+  }
+  .sneakers-div {
+    /* border: 2px solid yellow; */
+    height: auto;
+  }
+  .shadow-toggle2 {
+    z-index: 1;
+    display: block;
+  }
+  .sneakers-col1 {
+    position: relative;
+    /* border: 2px solid red; */
+  }
+  .big-sneaker {
+    margin-top: 1rem;
+    width:fit-content;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .mobile-prev,
+  .mobile-next {
+    display: block;
+    position: absolute;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    padding: 0.9rem 0.95rem;
+    border-radius: 50%;
+    /* background-color: white; */
+  }
+  .mobile-next {
+    right: 1%;
+    top: 50%;
+  }
+  .mobile-prev {
+    left: 1%;
+    top: 50%;
+  }
+  .sneakers-col2 {
+    display: none;
+  }
+}
+@media (max-width: 520px) {
+
+  .content-div {
+    width: 98%;
+  }
+
+  .col2-wrapper {
+    width: 95%;
+  }
+  .mobile-prev,
+  .mobile-next {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0.6rem 0.8rem;
+  }
+  .mobile-prev {
+    left: 4%;
+  }
+  .mobile-next {
+    right: 4%;
+  }
+  .big-sneaker {
+    margin-top: 0;
+  }
+  .main-heading {
+    font-size: 2rem;
+  }
+  .hero-subHeading {
+    margin-bottom: 0.7rem;
+  }
+  .main-heading {
+    margin-bottom: 1rem;
+  }
+  .hero-para {
+    margin-bottom: 0.7rem;
+  }
+  .cart2-col {
+    width: 100%;
+  }
+
+}

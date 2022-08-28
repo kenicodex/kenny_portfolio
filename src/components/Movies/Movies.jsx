@@ -32,16 +32,20 @@ function Movies(params) {
             {genrepicks.map(category => {
                 return (
                     <Box className="border rounded shadow bg-white" sx={{ my: '10px', mx: { xs: "2.5%", lg: "2.5%" }, width: "95%" }}>
-                        <Typography fontSize={{xs:"20px",lg:"30px"}} sx={{ pt: "5px", pl: "20px" }}>{category}</Typography>
+                        <Typography fontSize={{ xs: "20px", lg: "30px" }} sx={{ pt: "5px", pl: "20px" }}>{category}</Typography>
                         <Divider />
                         <Box sx={{ display: "flex", flexDirection: "row", mt: "10px", width: "100%", overflowX: "scroll" }} className="scroll pb-1">
                             {move.filter(x => x.genres.includes(category)).map(({ id, title, posterUrl, year, genres }) => {
                                 return (
-                                    <Box component={"div"} sx={{ height: {xs:150,lg:200}, cursor: "pointer", mx: {xs:"5px",lg:"5px"},
-                                     minWidth:{xs:"100px",lg:"150px"}, width: {xs:"100px",lg:"150px"}, maxWidth:{xs:"100px",lg:"150px"}, position:"relative"  }} 
-                                     className="border rounded-lg shadow bg-white text-dark " onClick={() => { window.location.assign('/movie?id=' + id /*+ "&title=" + title*/) }}>
-                                        <img src={posterUrl} alt="network" width="100%" height="100%" className="rounded" />
+                                    <a href="/movie">
+                                        <Box component={"div"} sx={{
+                                            height: { xs: 150, lg: 200 }, cursor: "pointer", mx: { xs: "5px", lg: "5px" },
+                                            minWidth: { xs: "100px", lg: "150px" }, width: { xs: "100px", lg: "150px" }, maxWidth: { xs: "100px", lg: "150px" }, position: "relative"
+                                        }}  onClick={()=>{sessionStorage.setItem('currentMovie',id) }}
+                                            className="border rounded-lg shadow bg-white text-dark ">
+                                            <img src={posterUrl} alt="network" width="100%" height="100%" className="rounded" />
                                     </Box>
+                                    </a>
                                 )
                             })}
                         </Box>

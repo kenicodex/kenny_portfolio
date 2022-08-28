@@ -38,9 +38,10 @@ function Store(params) {
                 display: "flex", flexDirection: "row", flexWrap: "wrap", mx: { xs: "1.5%", md: "10%" },
                 width: { xs: "97%", md: "80%" }, gap: { xs: "1%", md: "1.5%" }, color: "black"
             }}>
-                {product !== undefined ? product.map(({ title, thumbnail, price }, i) => {
+                {product !== undefined ? product.map(({id, title, thumbnail, price }, i) => {
                     return (
-                        <Box sx={{ width: { xs: "32.34%", md: "18.8%" }, height: {xs:"150px",md:"250px"}, my: "5px" }} className="border rounded bg-light shadow text-center " key={i}>
+                            <Box sx={{ width: { xs: "32.34%", md: "18.8%" }, height: {xs:"150px",md:"250px"}, my: "5px" }} className="border rounded bg-light shadow text-center " key={i}
+                            onClick={()=>{window.location.assign("/product"); sessionStorage.setItem('product',id)}}>
                             <Box sx={{ height: "70%", display:"flex", alignItems:"center" }}>
                                 <img src={thumbnail} alt="" width="100%" style={{ maxHeight: "100%", minHeight: "30%" }} />
                             </Box>
@@ -49,7 +50,8 @@ function Store(params) {
                                 <Typography sx={{ height: "30%" }} fontSize={{xs:"50%",lg:"70%"}} fontWeight={"600"} className="text-danger"> ${price}</Typography>
                                 <Typography sx={{ height: "30%", ml: "12.5%" }} className="btn-outline-primary w-75 border rounded " fontSize={{xs:"50%",lg:"70%"}}> Add to Cart</Typography>
                             </Box>
-                        </Box>)
+                        </Box>
+                         )
                 }) : <Box className="alert alert-danger text-center" component={"span"}> {message}</Box>}
             </Box>
             <Footer />

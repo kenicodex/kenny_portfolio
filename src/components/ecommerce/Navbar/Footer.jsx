@@ -1,3 +1,4 @@
+import { Divider } from '@mui/material';
 import { Box } from '@mui/system';
 import React from 'react'
 import './footer.css'
@@ -6,7 +7,7 @@ import { ecomroutes } from './route';
 function Footer(params) {
     return (
         <>
-            <footer>
+            <footer className='border-top mt-2'>
                 <div className="main">
                     <Box sx={{ textAlign: { xs: "center" } }} className="col1">
                         <h3 className="heading text-center">
@@ -47,7 +48,7 @@ function Footer(params) {
                         </div>
                     </div>
                 </div>
-
+<Divider />
                 <p className="terms">
                     @copyright 2022 {Date().getYear}
                 </p>
