@@ -3,31 +3,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Portfolio from "./components/Portofilio/Portfolio";
 import Todolist from "./components/Todolist/TodoList";
 import { Provider } from "react-redux";
-import todoReducer from './redux/reducers'
-import { configureStore } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage";
-import { persistReducer /* , persistStore */ } from "redux-persist";
 import Movies from "./components/Movies/Movies.jsx";
 import Movie from "./components/Movies/movie";
 import Store from "./components/ecommerce/Home/Home";
 import SingleProduct from "./components/ecommerce/Product/Product";
 import Cart from "./components/ecommerce/Cart/Cart";
-// import Cart from "./components/ecommerce/Cart/Cart";
-// import { PersistGate } from "redux-persist/integration/react";
-// import thunk from 'redux-thunk';
+import store from "./redux/store";
+
+import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore } from 'redux-persist'
+let persistor = persistStore(store);
 function App(params) {
-    const persistConfig = {
-        key: 'todo',
-        version: 1,
-        storage
-    }
-    const persisReducer = persistReducer(persistConfig, todoReducer)
-    const store = configureStore({
-        reducer: persisReducer,
-    })
     return (
         <Provider store={store}>
-            {/* <PersistGate persistor={persistor}> */}
+            <PersistGate loading={null} persistor={persistor}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Portfolio />} exact />
@@ -39,7 +28,7 @@ function App(params) {
                     <Route path="/cart" element={<Cart />}  />
                 </Routes>
             </BrowserRouter>
-            {/* </PersistGate> */}
+            </PersistGate>
         </Provider>
     )
 }

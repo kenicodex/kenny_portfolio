@@ -2,19 +2,15 @@ import React from 'react'
 import { Container, Typography, Box, Button } from '@mui/material'
 import AddTodo from './AddTodo'
 import { useSelector, useDispatch } from 'react-redux'
-// import { DeleteIcon } from '@mui/icons-material';
-import { check, delit } from '../../redux/action'
 import './todolist.css'
 import Navbar from "../../Semantics/Navbar.tsx";
+import { deleteTodo, toogle } from '../../redux/todoSlice'
 
 export default function TodoList() {
     const [message, setMessage] = React.useState("All Task")
 
-    const todo = useSelector((state) => state)
+    const todo = useSelector((state) => state.todo)
     const dispatch = useDispatch()
-    const checkItem = (index, array) => {
-        dispatch(check(index, array))
-    }
     const show = () => {
         let pass = window.prompt("enter key to view secret message")
         if (pass === "chemistrylab") {
@@ -39,8 +35,8 @@ export default function TodoList() {
                                 {item}
                             </Typography>
                             <Box sx={{ position: "relative", right: "20px", display: "flex", justifyContent: 'space-between' }}>
-                                <input type="checkbox" className='check' onChange={() => checkItem(i, todo[i])} />
-                                <Button onClick={() => { dispatch(delit(i, todo[i])) }}>
+                                <input type="checkbox" className='check' onChange={() => dispatch(toogle({id:id}))} />
+                                <Button onClick={() => { dispatch(deleteTodo({id:id})) }}>
                                     <i class="fa fa-trash-o" style={{ fontSize: "22px", color: "red" }}></i>
                                 </Button></Box>
                         </Box>)

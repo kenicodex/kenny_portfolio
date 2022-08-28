@@ -4,11 +4,14 @@ import EcomNav from "../Navbar/EcomNav.jsx";
 import Footer from "../Navbar/Footer.jsx";
 import Header from "../Header/Header.jsx";
 import './card.css'
+import { useDispatch } from "react-redux";
+import { addcart } from "../../../redux/cartSlice.js";
 // import { getAllProduct } from "../fetchproduct.js";
 
 function Store(params) {
     const [product, setProduct] = useState([])
     const [message, setMessage] = useState()
+    const dispatch = useDispatch()
     useEffect(() => {
         fetch('https://dummyjson.com/products')
             .then(res => res.json())
@@ -48,7 +51,8 @@ function Store(params) {
                             <Box sx={{ height: "30%",  }} className="text-center">
                                 <Typography sx={{ height: "30%" }} fontSize={{xs:"50%",lg:"70%"}} fontWeight={"600"} >{title} </Typography>
                                 <Typography sx={{ height: "30%" }} fontSize={{xs:"50%",lg:"70%"}} fontWeight={"600"} className="text-danger"> ${price}</Typography>
-                                <Typography sx={{ height: "30%", ml: "12.5%" }} className="btn-outline-primary w-75 border rounded " fontSize={{xs:"50%",lg:"70%"}}> Add to Cart</Typography>
+                                <Typography sx={{ height: "30%", ml: "12.5%" }} className="btn-outline-primary w-75 border rounded " fontSize={{xs:"50%",lg:"70%"}}
+                                onClick={()=>{dispatch(addcart(product[i]))}}> Add to Cart</Typography>
                             </Box>
                         </Box>
                          )

@@ -3,7 +3,8 @@ import Modal from '@mui/material/Modal';
 import { Divider, TextField, Box, Button, Typography, Grow } from '@mui/material';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useDispatch } from 'react-redux'
-import { addTodo } from '../../redux/action'
+import { addTodo } from '../../redux/todoSlice';
+// import { addTodo } from '../../redux/action'
 
 const style = {
     position: 'absolute',
@@ -36,7 +37,7 @@ export default function AddTodo() {
     }
     const chevk = () => {
         if (item.length > 3) {
-            dispatch(addTodo(item))
+            dispatch(addTodo({payload : item}))
         } else {
             alert("most be more than 3 words")
         }

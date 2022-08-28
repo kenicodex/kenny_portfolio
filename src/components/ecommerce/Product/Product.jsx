@@ -8,10 +8,13 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import './style.css'
 import { getData } from "./fetch";
 import { Box, Typography } from "@mui/material";
+import { useDispatch } from 'react-redux'
+import { addcart } from "../../../redux/cartSlice";
 
 function SingleProduct(params) {
     const [product, setProduct] = useState({})
     const [items, setItems] = useState(0);
+    const dispatch = useDispatch()
     useEffect(() => {
         fetch('https://dummyjson.com/products/' + sessionStorage.getItem('product'))
             .then(res => res.json())
@@ -57,7 +60,7 @@ function SingleProduct(params) {
                                     }} />
                                 </div>
                                 <div className="cart2-col cart2-col2">
-                                    <button className=" btn btn-outline-primary" >
+                                    <button className=" btn btn-outline-primary" onClick={()=>{dispatch(addcart(product))}}>
                                         <AddShoppingCartIcon />Add to cart
                                     </button>
                                 </div>
