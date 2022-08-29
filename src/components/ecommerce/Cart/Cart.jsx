@@ -1,14 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import EcomNav from '../Navbar/EcomNav';
 import Footer from '../Navbar/Footer';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import './cart.css'
+import { decrease, deletecart, increase } from '../../../redux/cartSlice';
+import Message from '../Message';
 
 function Cart() {
     const cart = useSelector((state) => state.cart)
+    const dispatch = useDispatch()
+    const [totalCartPrice, setTotalCartPrice] = useState(0)
+    const getSumAll = (arr) => {
+        return arr.reduce((total, current) => {
+            return total + current
+        }, 0)
+
+    }
+    useEffect(() => {
+        let total = [] // array to get all totals of each item
+        cart.map(x => {
+            total.push(x.number * x.price)
+            return total
+        })
+        setTotalCartPrice(getSumAll(total))
+    }, [cart])
+
     return (
         <>
             <EcomNav />
+            <Message show={true} severity="success" message="Success"/>
             {/* <section class="h-100 gradient-custom"> */}
             <div class="container py-5">
                 <div class="row d-flex justify-content-center my-4">
@@ -20,7 +40,7 @@ function Cart() {
                             <div class="card-body">
                                 {/* <!-- Single item --> */}
                                 <div class="row">
-                                    {cart.map(({ title, thumbnail , price}) => {
+                                    {cart.map(({ id, title, thumbnail, price, number }, index) => {
                                         return (
                                             <>
                                                 <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
@@ -38,48 +58,49 @@ function Cart() {
                                                 <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                                                     {/* <!-- Data --> */}
                                                     <p><strong>{title}</strong></p>
-                                                    <p>Color: blue</p>
-                                                    <p>Size: M</p>
+                                                    {/* <p>Color: blue</p>
+                                                    <p>Size: M</p> */}
                                                     <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                                                        title="Remove item">
-                                                        <i class="fas fa-trash"></i>
+                                                        onClick={() => { dispatch(deletecart({ id: id })) }} title="Remove item">
+                                                        <i class="fa fa-trash"></i>
                                                     </button>
                                                     <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
                                                         title="Move to the wish list">
-                                                        <i class="fas fa-heart"></i>
+                                                        <i class="fa fa-heart"></i>
                                                     </button>
                                                     {/* <!-- Data --> */}
                                                 </div>
-                                  
-                                    <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                                        {/* <!-- Quantity --> */}
-                                        <div class="d-flex mb-4" style={{ maxWidth: "300px" }}>
-                                            <button class="btn btn-primary px-3 me-2"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
 
-                                            <div class="form-outline">
-                                                <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
-                                                <label class="form-label" for="form1">Quantity</label>
-                                            </div>
+                                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                                    {/* <!-- Quantity --> */}
+                                                    <div class="d-flex mb-4" style={{ maxWidth: "300px" }}>
+                                                        <button class="btn btn-primary px-3 me-2" style={{ height: "50px" }}
+                                                            onClick={() => { dispatch(decrease({ index: index })) }}>
+                                                            <i class="fa fa-minus"></i>
+                                                        </button>
 
-                                            <button class="btn btn-primary px-3 ms-2"
-                                                onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                                <i class="fas fa-plus"></i>
-                                            </button>
-                                        </div>
-                                        {/* <!-- Quantity --> */}
+                                                        <div class="form-outline">
+                                                            <input id="form1" min="0" name="quantity" value={number} type="number" class="form-control" style={{ height: "50px" }} />
+                                                            <label class="form-label" for="form1">Quantity</label>
+                                                        </div>
 
-                                        {/* <!-- Price --> */}
-                                        <p class="text-start text-md-center">
-                                            <strong>${price}</strong>
-                                        </p>
-                                        {/* <!-- Price --> */}
-                                    </div>
+                                                        <button class="btn btn-primary px-3 ms-2" style={{ height: "50px" }}
+                                                            onClick={() => { dispatch(increase({ index: index })) }}>
+                                                            <i class="fa fa-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                    {/* <!-- Quantity --> */}
 
-                                <hr class="my-4" />
-                                              </>
+                                                    {/* <!-- Price --> */}
+                                                    <p class="text-start text-md-center">
+                                                        Unit Price: <strong>${price}</strong> <br />
+                                                        Total Price: <strong>${price * number}</strong>
+                                                    </p>
+                                                    {/* <!-- Price --> */}
+                                                </div>
+
+                                                <hr class="my-4" />
+                                            </>
                                         )
                                     })}
                                 </div>
@@ -121,7 +142,7 @@ function Cart() {
                                     <li
                                         class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                                         Products
-                                        <span>$53.98</span>
+                                        <span>${totalCartPrice}</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                                         Shipping
@@ -135,7 +156,7 @@ function Cart() {
                                                 <p class="mb-0">(including VAT)</p>
                                             </strong>
                                         </div>
-                                        <span><strong>$53.98</strong></span>
+                                        <span><strong>${totalCartPrice}</strong></span>
                                     </li>
                                 </ul>
 

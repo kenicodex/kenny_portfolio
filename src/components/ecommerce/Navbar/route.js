@@ -11,7 +11,7 @@ export const ecomroutes = [
     },
     {
         page : "Cart",
-        link : "/fakestore",
+        link : "/cart",
         icon : "cart"
     },
     {

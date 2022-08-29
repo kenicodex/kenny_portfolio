@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import EcomNav from "../Navbar/EcomNav";
 import Footer from "../Navbar/Footer";
-import LeftImage from "./LeftImage";
+import LeftImage from "./LeftImage.jsx";
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
@@ -13,7 +13,7 @@ import { addcart } from "../../../redux/cartSlice";
 
 function SingleProduct(params) {
     const [product, setProduct] = useState({})
-    const [items, setItems] = useState(0);
+    const [items, setItems] = useState(1);
     const dispatch = useDispatch()
     useEffect(() => {
         fetch('https://dummyjson.com/products/' + sessionStorage.getItem('product'))
@@ -60,7 +60,7 @@ function SingleProduct(params) {
                                     }} />
                                 </div>
                                 <div className="cart2-col cart2-col2">
-                                    <button className=" btn btn-outline-primary" onClick={()=>{dispatch(addcart(product))}}>
+                                    <button className=" btn btn-outline-primary" onClick={()=>{dispatch(addcart({product:product, number : items }))}}>
                                         <AddShoppingCartIcon />Add to cart
                                     </button>
                                 </div>
