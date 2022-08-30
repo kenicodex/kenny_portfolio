@@ -22,3 +22,11 @@
   from = "/cart"
   to = "/index.html"
   status = 200
+[[redirects]]
+  from = "/categories"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/category"
+  to = "/index.html"
+  status = 200

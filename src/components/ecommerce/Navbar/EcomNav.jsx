@@ -1,8 +1,19 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './ecomnav.css'
 import $ from 'jquery'
 import { ecomroutes } from './route'
+import { useSelector } from 'react-redux'
+import { Typography } from '@mui/material'
+import Search from './Search'
+
 function EcomNav(params) {
+    const [cate, setCate] = useState([])
+    const [search, setsearch] = useState([])
+
+    const seachInput = (e) =>{
+        setsearch(e.target.value)
+    }
+
     useEffect(() => {
         $(document).ready(function () {
             $("#sidebarCollapse").on("click", function () {
@@ -24,8 +35,12 @@ function EcomNav(params) {
                 $(".overlay").removeClass("visible");
             });
         });
+        fetch('https://dummyjson.com/products/categories')
+            .then(res => res.json())
+            .then(data => setCate(data));
 
-    })
+    }, [])
+    const state = useSelector(state => state.cart)
 
     return (
         <>
@@ -58,19 +73,21 @@ function EcomNav(params) {
 
                     <ul className="navbar-nav ml-auto d-block d-md-none">
                         <li className="nav-item">
-                            <a className="btn btn-link" href="/"><i className="bx bxs-cart icon-single"></i> <span className="badge badge-danger">3</span></a>
+                            <a className="btn btn-link" href="/"><i className="bx bxs-cart icon-single"></i> <span className="badge badge-danger"><Typography component={"sapn"} fontSize={"10px"}>{state.length}</Typography></span></a>
                         </li>
                     </ul>
 
-                    <div className="collapse navbar-collapse">
+                    <div className="collapse navbar-collapse position-relative">
                         <form className="form-inline my-2 my-lg-0 mx-auto d-flex">
-                            <input className="form-control" type="search" placeholder="Search for products..." aria-label="Search" />
+                            <input className="form-control" type="search" placeholder="Search for products..." aria-label="Search" value={search} onChange={(e) => { seachInput(e) }} />
                             <button className="btn btn-primary my-2 my-sm-0" type="submit"><i className="bx bx-search"></i></button>
                         </form>
-
+                        <Search value={search} />
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="btn btn-link" href="/"><i className="bx bxs-cart icon-single"></i> <span className="badge badge-danger">3</span></a>
+                                <a className="btn btn-link" href="/cart"><i className="bx bxs-cart icon-single"></i> <span className="badge badge-danger">{state.length}</span>
+                                    <Typography component={"sapn"} fontSize={"10px"}>{state.length}</Typography></a>
+
                             </li>
                             <li className="nav-item ml-md-3">
                                 <a className="btn btn-primary" href="/"><i className="bx bxs-user-circle mr-1"></i> Log In / Register</a>
@@ -105,9 +122,10 @@ function EcomNav(params) {
                     <div className="row">
                         <div className="col-12">
                             <form className="form-inline mb-3 mx-auto d-flex">
-                                <input className="form-control" type="search" placeholder="Search for products..." aria-label="Search" />
+                                <input className="form-control" type="search" placeholder="Search for products..." value={search} onChange={(e) => { seachInput(e) }} aria-label="Search" />
                                 <button className="btn btn-primary" type="submit"><i className="bx bx-search"></i></button>
                             </form>
+                            <Search value={search} />
                         </div>
                     </div>
                 </div>
@@ -132,7 +150,7 @@ function EcomNav(params) {
                 </div>
 
                 <ul className="list-unstyled components links">
-                    {ecomroutes.map(({ page, link, icon },i) => {
+                    {ecomroutes.map(({ page, link, icon }, i) => {
                         return (<>
                             <li className="" key={i}>
                                 <a href={link}><i className={"'bx bx-" + icon + " mr-3'"} ></i> {page}</a>
@@ -142,24 +160,13 @@ function EcomNav(params) {
 
                 <h6 className="text-uppercase mb-1">Categories</h6>
                 <ul className="list-unstyled components mb-3">
-                    <li>
-                        <a href="/">Category 1</a>
-                    </li>
-                    <li>
-                        <a href="/">Category 1</a>
-                    </li>
-                    <li>
-                        <a href="/">Category 1</a>
-                    </li>
-                    <li>
-                        <a href="/">Category 1</a>
-                    </li>
-                    <li>
-                        <a href="/">Category 1</a>
-                    </li>
-                    <li>
-                        <a href="/">Category 1</a>
-                    </li>
+                    {cate.map((x, i) => {
+                        return (
+                            <li onClick={() => { localStorage.setItem('category', x) }}>
+                                <a href="/category" key={i}>{x}</a>
+                            </li>
+                        )
+                    })}
                 </ul>
 
                 <ul className="social-icons">

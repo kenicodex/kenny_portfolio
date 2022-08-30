@@ -8,10 +8,13 @@ import Movie from "./components/Movies/movie";
 import Store from "./components/ecommerce/Home/Home";
 import SingleProduct from "./components/ecommerce/Product/Product";
 import Cart from "./components/ecommerce/Cart/Cart";
-import store from "./redux/store";
+import Categories from "./components/ecommerce/Categories/Categories";
 
+import store from "./redux/store";
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
+import Category from "./components/ecommerce/Categories/Category";
+
 let persistor = persistStore(store);
 function App(params) {
     return (
@@ -26,6 +29,8 @@ function App(params) {
                     <Route path="/fakestore" element={<Store />}  />
                     <Route path="/product" element={<SingleProduct />}  />
                     <Route path="/cart" element={<Cart />}  />
+                    <Route path="/categories" element={<Categories />}  />
+                    <Route path="/category" element={<Category />}  />
                 </Routes>
             </BrowserRouter>
             </PersistGate>

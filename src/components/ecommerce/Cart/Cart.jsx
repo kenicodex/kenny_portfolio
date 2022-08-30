@@ -4,7 +4,6 @@ import Footer from '../Navbar/Footer';
 import { useSelector, useDispatch } from 'react-redux'
 import './cart.css'
 import { decrease, deletecart, increase } from '../../../redux/cartSlice';
-import Message from '../Message';
 
 function Cart() {
     const cart = useSelector((state) => state.cart)
@@ -28,7 +27,6 @@ function Cart() {
     return (
         <>
             <EcomNav />
-            <Message show={true} severity="success" message="Success"/>
             {/* <section class="h-100 gradient-custom"> */}
             <div class="container py-5">
                 <div class="row d-flex justify-content-center my-4">

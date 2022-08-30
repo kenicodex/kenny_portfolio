@@ -8,28 +8,31 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import './style.css'
 import { getData } from "./fetch";
 import { Box, Typography } from "@mui/material";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addcart } from "../../../redux/cartSlice";
+import Message from '../Message';
 
 function SingleProduct(params) {
     const [product, setProduct] = useState({})
     const [items, setItems] = useState(1);
+    const state = useSelector(state => state.cart)
     const dispatch = useDispatch()
     useEffect(() => {
         fetch('https://dummyjson.com/products/' + sessionStorage.getItem('product'))
             .then(res => res.json())
             .then(data => setProduct(data))
-    }, [])
+    },[])
 
     return (
         <React.Fragment>
+            <Message show={state.find(x => x.id === product.id ) !== undefined} severity="success" message="Item added successfully" />
             <EcomNav />
             <div className="hero-sec content-div">
                 <div className="hero-row">
                     <div className="hero-col hero-col1">
                         <LeftImage thumbnail={product.thumbnail} images={product.images} />
                     </div>
-                    <Box className="hero-col hero-col2" component={"div"} sx={{pt:{xs:"40px",md:"0"}}}>
+                    <Box className="hero-col hero-col2" component={"div"} sx={{ pt: { xs: "40px", md: "0" } }}>
                         <div className="col2-wrapper">
                             <h4 className="hero-subHeading text-primary">{product.brand} {getData().id} </h4>
                             <h1 className="main-heading">{product.title} </h1>
@@ -39,7 +42,7 @@ function SingleProduct(params) {
                             </p>
                             <span className="dollar">${product.price} </span>
                             <span className="discount hero-subHeading text-primary">{product.discountPercentage}%</span>
-                            <Typography className="discount2 hero-para text-secondary" fontSize={"14px"} sx={{textDecoration:"line-through"}}>
+                            <Typography className="discount2 hero-para text-secondary" fontSize={"14px"} sx={{ textDecoration: "line-through" }}>
                                 ${Math.round(product.price + (product.price * (product.discountPercentage / 100)))}</Typography>
                             <div className="cart2-sec">
                                 <div className="cart2-col cart2-col1 ">
@@ -60,7 +63,7 @@ function SingleProduct(params) {
                                     }} />
                                 </div>
                                 <div className="cart2-col cart2-col2">
-                                    <button className=" btn btn-outline-primary" onClick={()=>{dispatch(addcart({product:product, number : items }))}}>
+                                    <button className=" btn btn-outline-primary" onClick={() => { dispatch(addcart({ product: product, number: items })) }}>
                                         <AddShoppingCartIcon />Add to cart
                                     </button>
                                 </div>

@@ -6,19 +6,21 @@ import { Alert, Fade } from '@mui/material';
 function Message(props) {
     const [show, setshow] = useState(false)
     useEffect(()=>{
+        setshow(props.show)
         setTimeout(() => {
-            setshow(false)            
-        }, 4000);
-    },[show])
+            setshow(false)         
+        }, 5000);
+    },[props.show])
     return (
         <>
             <Fade
-                in={!show ? props.show : show }
+                in={show}
                 timeout={3000}>
                 <Alert
                     variant={props.variant ? props.variant : 'filled'}
                     severity={props.severity}
                     sx={{
+                        display : show,
                         width: { xs: "75%", md: "30%" },
                         height: 100,
                         position: "fixed",

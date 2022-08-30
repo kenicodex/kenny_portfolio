@@ -6,7 +6,7 @@ export const ecomroutes = [
     },
     {
         page : "Categories",
-        link : "/fakestore",
+        link : "/categories",
         icon : ""
     },
     {
