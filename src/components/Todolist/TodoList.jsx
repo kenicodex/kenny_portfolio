@@ -3,7 +3,7 @@ import { Container, Typography, Box, Button } from '@mui/material'
 import AddTodo from './AddTodo'
 import { useSelector, useDispatch } from 'react-redux'
 import './todolist.css'
-import Navbar from "../../Semantics/Navbar.tsx";
+import Navbar from "../Semantics/Navbar.tsx";
 import { deleteTodo, toogle } from '../../redux/todoSlice'
 
 export default function TodoList() {

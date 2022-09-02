@@ -14,9 +14,11 @@ import store from "./redux/store";
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistStore } from 'redux-persist'
 import Category from "./components/ecommerce/Categories/Category";
+import WeatherApp from "./components/WeatherApp/Home";
+import MapApp from "./components/MapApp/Home";
 
 let persistor = persistStore(store);
-function App(params) {
+function App(props ) {
     return (
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
@@ -31,6 +33,8 @@ function App(params) {
                     <Route path="/cart" element={<Cart />}  />
                     <Route path="/categories" element={<Categories />}  />
                     <Route path="/category" element={<Category />}  />
+                    <Route path="/weatherapp" element={<WeatherApp />}  />
+                    <Route path="/mapapp" element={<MapApp />}  />
                 </Routes>
             </BrowserRouter>
             </PersistGate>

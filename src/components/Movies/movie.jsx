@@ -3,7 +3,7 @@ import { Box } from '@mui/system'
 import React, { useEffect } from 'react'
 import { useLocation } from 'react-router';
 import YTSearch from 'youtube-api-search';
-import Navbar from "../../Semantics/Navbar.tsx";
+import Navbar from "../Semantics/Navbar.tsx";
 import { movies } from './moviedata';
 function Movie() {
     const [get, setGet] = React.useState([""])

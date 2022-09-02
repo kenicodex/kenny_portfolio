@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { Box, Divider, Slide, Typography } from "@mui/material";
-import Navbar from "../../Semantics/Navbar.tsx";
+import Navbar from "../Semantics/Navbar.tsx";
 import './movie.css'
 import { movies } from "./moviedata";
 

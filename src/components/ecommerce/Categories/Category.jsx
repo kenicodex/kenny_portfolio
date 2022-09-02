@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import EcomLayout from "../EcomLayout";
 // import { Box } from "@mui/material";
-import EcomNav from '../Navbar/EcomNav';
-import Footer from '../Navbar/Footer';
+// import EcomNav from '../Navbar/EcomNav';
+// import Footer from '../Navbar/Footer';
 import ProductList from "../ProductList/ProductList";
 
 function Category(params) {
@@ -14,10 +15,10 @@ function Category(params) {
     }, [])
     return (
         <>
-            <EcomNav />
+            <EcomLayout>
+                <ProductList product={cate} messase="something went wrong: try again" />
+            </EcomLayout>
 
-            <ProductList product={cate} messase="something went wrong: try again"/>
-            <Footer />
         </>
     )
 }

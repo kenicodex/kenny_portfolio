@@ -45,7 +45,7 @@ function Cart() {
                                                     {/* <!-- Image --> */}
                                                     <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
                                                         <img src={thumbnail}
-                                                            class="w-100" alt="Blue Jeans Jacket" />
+                                                            class="w-100" alt="Network Error" />
                                                         <a href="/cart">
                                                             <div class="mask" style={{ backgroundColor: " rgba(251, 251, 251, 0.2)" }}></div>
                                                         </a>

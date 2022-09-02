@@ -35,14 +35,14 @@ function Footer(params) {
                         <h3 className="heading text-center">
                             Get in touch
                         </h3>
-                        <div className="social text-dark text-center">
-                            <a href="/" className="text-right">
+                        <div className=" text-dark text-center" style={{letterSpacing:"50px"}}>
+                            <a href="/" className="text-right  mx-2">
                                 <ion-icon name="logo-facebook"><i className='fa fa-twitter'></i></ion-icon>
                             </a>
-                            <a href="/" className="text-right">
+                            <a href="/" className="text-right mx-2">
                                 <ion-icon name="logo-twitter"><i className='fa fa-linkedin'></i></ion-icon>
                             </a>
-                            <a href="/" className="text-right">
+                            <a href="/" className="text-right mx-2">
                                 <ion-icon name="logo-linkedin"><i className='fa fa-github'></i></ion-icon>
                             </a>
                         </div>
