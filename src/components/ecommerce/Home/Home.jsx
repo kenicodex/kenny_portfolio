@@ -26,7 +26,6 @@ function Store(params) {
             .catch(err => {
                 if (err) {
                     setMessage(err)
-                    
                 }
             })
     }, [])

@@ -49,9 +49,9 @@ function Portfolio() {
       </Box>
       {/* </Grow> */}
       <Divider />
-      <Box sx={{ height: "70vh", position: "relative", display: "flex", flexDirection: "column", justifyContent: "center" }} className='bg-white text-center'>
+      <Box sx={{ height: "auto", position: "relative", display: "flex", flexDirection: "column", justifyContent: "center", py:"20px" }} className='bg-white text-center'>
         {/* <Slide direction='up' in={bool[0]} timeout={2000}> */}
-        <motion.div initial={{  opacity: 0, scale: 0 }} whileInView={{  opacity: 1, scale: 1,}} viewport={{ once: false }} transition={{ duration: 1, ease: 'easeIn', staggerChildren:1}}>
+        <motion.div initial={{  opacity: 0, scale: 0 }} whileInView={{  opacity: 1, scale: 1,}} viewport={{ once: false }} transition={{ duration: .5 , ease: 'easeIn'}}>
 
           <Typography fontSize={{ xs: "40px", lg: "60px" }} fontWeight="300" sx={{ pt: "30px", px: { xs: "20px" } }} fontFamily="martel">
             Full Stack Web Developer
@@ -66,6 +66,9 @@ function Portfolio() {
             <Link to="/todolist"><Button variant="outlined" color="primary" className='m-1' sx={{ width: "150px" }}>Todolist</Button></Link>
             <Link to="/movies"><Button variant="outlined" color="primary" className='m-1' sx={{ width: "150px" }}>Movies</Button></Link>
             <Link to="/fakestore"><Button variant="outlined" color="primary" className='m-1' sx={{ width: "150px" }}>Ecommerce</Button></Link>
+            <Link to="/weatherapp"><Button variant="outlined" color="primary" className='m-1' sx={{ width: "150px" }}>Weather App</Button></Link>
+            <Link to="/betlikely"><Button variant="outlined" color="primary" className='m-1' sx={{ width: "150px" }}>Bet Likely</Button></Link>
+            <Link to="/chatapp" ><Button variant="outlined" color="primary" disabled className='m-1' sx={{ width: "150px" }}>Chat App</Button></Link>
           </Box>
         </motion.div>
       </Box>

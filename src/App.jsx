@@ -16,6 +16,11 @@ import { persistStore } from 'redux-persist'
 import Category from "./components/ecommerce/Categories/Category";
 import WeatherApp from "./components/WeatherApp/Home";
 import MapApp from "./components/MapApp/Home";
+import BetLikely from "./components/BetPrediction/Home/Home";
+import Astalavee from "./components/Astalavee/Astalavee";
+import Login from "./components/Astalavee/Auth/Login";
+import Signup from "./components/Astalavee/Auth/Signup";
+import Profille from "./components/Astalavee/Profile/Profille";
 
 let persistor = persistStore(store);
 function App(props ) {
@@ -33,8 +38,13 @@ function App(props ) {
                     <Route path="/cart" element={<Cart />}  />
                     <Route path="/categories" element={<Categories />}  />
                     <Route path="/category" element={<Category />}  />
-                    <Route path="/weatherapp" element={<WeatherApp />}  />
+                    <Route path="/weatherapp" element={<WeatherApp />}  />v
                     <Route path="/mapapp" element={<MapApp />}  />
+                    <Route path="/betlikely" element={<BetLikely />}  />
+                    <Route path="/astalavee" element={<Astalavee />}  />
+                    <Route path="/astalavee/login" element={<Login />}  />
+                    <Route path="/astalavee/signup" element={<Signup />}  />
+                    <Route path="/astalavee/userprofile" element={<Profille />}  />
                 </Routes>
             </BrowserRouter>
             </PersistGate>
