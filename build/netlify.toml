@@ -34,3 +34,7 @@
   from = "/weatherapp"
   to = "/index.html"
   status = 200
+[[redirects]]
+  from = "/astalavee"
+  to = "/index.html"
+  status = 200
