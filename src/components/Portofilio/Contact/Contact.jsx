@@ -1,0 +1,145 @@
+import {
+  createStyles,
+  Text,
+  Title,
+  SimpleGrid,
+  TextInput,
+  Textarea,
+  Button,
+  Group,
+  ActionIcon,
+} from '@mantine/core';
+import { Box, Typography } from '@mui/material';
+import { IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons';
+import { motion } from 'framer-motion'
+
+const useStyles = createStyles((theme) => ({
+  wrapper: {
+    minHeight: 400,
+    boxSizing: 'border-box',
+    // backgroundImage: `linear-gradient(-60deg, ${theme.colors[theme.primaryColor][4]} 0%, ${theme.colors[theme.primaryColor][7]
+    //   } 100%)`,
+    // borderRadius: theme.radius.md,
+    padding: theme.spacing.xl * 2.5,
+
+    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+      padding: theme.spacing.xl * 1.5,
+    },
+  },
+
+  title: {
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+    color: theme.white,
+    lineHeight: 1,
+  },
+
+  description: {
+    color: theme.colors[theme.primaryColor][0],
+    maxWidth: 300,
+
+    [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
+      maxWidth: '100%',
+    },
+  },
+
+  form: {
+    backgroundColor: theme.white,
+    padding: theme.spacing.xl,
+    borderRadius: theme.radius.md,
+    boxShadow: theme.shadows.lg,
+  },
+
+  social: {
+    color: theme.white,
+
+    '&:hover': {
+      color: theme.colors[theme.primaryColor][1],
+    },
+  },
+
+  input: {
+    backgroundColor: theme.white,
+    borderColor: theme.colors.gray[4],
+    color: theme.black,
+
+    '&::placeholder': {
+      color: theme.colors.gray[5],
+    },
+  },
+
+  inputLabel: {
+    color: theme.black,
+  },
+
+  control: {
+    backgroundColor: theme.colors[theme.primaryColor][6],
+  },
+}));
+
+const social = [IconBrandTwitter, IconBrandLinkedin, IconBrandGithub ];
+
+export default function ContactUs() {
+  const { classes } = useStyles();
+
+  const icons = social.map((Icon, index) => (
+    <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
+      <Icon size={22} stroke={1.5} />
+    </ActionIcon>
+  ));
+
+  return (
+    <Box className={classes.wrapper + 'bg-dark'} sx={{width: { xs: "95%", md: "90%" }, mx: "auto", my:"20px"}}>
+      <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
+        <div>
+          <Title className={classes.title}>Contact us</Title>
+          <Text className={classes.description} mt="sm" mb={30}>
+            Leave a message and i get back to you in less than 12 hours
+          </Text>
+          <Box>
+            <Typography component={'div'} fontSize="18px" sx={{mt:'10px'}} color={'white'}> @ Email <br /> <span style={{ fontSize: "15px" }}>kehindesalaudeen222@gmail.com</span> </Typography>
+            <Typography component={'div'} fontSize="18px" sx={{mt:'10px'}} color={'white'}> <i className='fa fa-phone'></i> Phone <br /> <span style={{ fontSize: "15px" }}>+2348056499531</span> </Typography>
+          </Box>
+          {/* <ContactIconsList variant="white" /> */}
+
+          <Group mt="xl">{icons}</Group>
+        </div>
+        <motion.div intial={{ opacity: 0 }} animate={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: .3 }} >
+          <div className={classes.form}>
+        <motion.div intial={{ opacity: 0 }} animate={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: .3 }} >
+            <TextInput
+              label="Name"
+              placeholder="John Doe"
+              mt="md"
+              classNames={{ input: classes.input, label: classes.inputLabel }}
+            /></motion.div>
+            <TextInput
+              label="Email"
+              placeholder="your@email.com"
+              required
+              mt="md"
+              classNames={{ input: classes.input, label: classes.inputLabel }}
+            />
+            <TextInput
+              label="Subject"
+              placeholder="Request to join a project"
+              mt="md"
+              classNames={{ input: classes.input, label: classes.inputLabel }}
+            />
+            <Textarea
+              required
+              label="Your message"
+              placeholder="Hello kehinde, i would like you to join my team on a project"
+              minRows={4}
+              mt="md"
+              classNames={{ input: classes.input, label: classes.inputLabel }}
+            />
+
+            <Group position="right" mt="md">
+              <Button className={classes.control}>Send message</Button>
+            </Group>
+          </div>
+        </motion.div>
+      </SimpleGrid>
+    </Box>
+  );
+}

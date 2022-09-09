@@ -1,19 +1,19 @@
 {
-  "short_name": "My Portfolio",
+  "short_name": "Kenny Dev.",
   "name": "Kenny Portfolio Webpage",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "mylogo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "IMG_1392.jpg",
+      "src": "mylogo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "IMG_1392.jpg",
+      "src": "mylogo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

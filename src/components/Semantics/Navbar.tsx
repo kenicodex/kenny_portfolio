@@ -13,6 +13,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
+export const navItems = [{ item: 'Home', link: "/" },
+{ item: 'Projects', link: "/todolist" },
+{ item: 'About', link: "/" }, { item: 'Contact', link: "#contact" }];
 
 interface Props {
   /**
@@ -23,7 +26,6 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = [{ item: 'Home', link: "/" }, { item: 'Projects', link: "/todolist" }, { item: 'About', link: "/" }, { item: 'Contact', link: "/" }];
 
 export default function Navbar(props: Props) {
   const { window } = props;
@@ -32,18 +34,23 @@ export default function Navbar(props: Props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
+  const hover = {
+    "&:hover":
+    {
+      backgroundColor: "grey"
+    }
+  }
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', bgcolor: "black", color: "white", height: "100vh" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        Kenny Inc.
+      <Typography component={"a"} variant="h6" href="/" sx={{ my: 2 }}>
+        <img src={process.env.PUBLIC_URL + '/mylogo.png'} width="30px" height={'30px'} alt='Kenny Dev.' />
       </Typography>
       <Divider />
       <List>
-        {navItems.map(({item,link}) => (
-          <ListItem key={item} disablePadding>
+        {navItems.map(({ item, link }) => (
+          <ListItem key={item} disablePadding sx={{ ...hover }}>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <Link to={link}><ListItemText primary={item} /></Link>
+              <a href="#contact"><ListItemText primary={item} /></a>
             </ListItemButton>
           </ListItem>
         ))}
@@ -54,29 +61,29 @@ export default function Navbar(props: Props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex', bgcolor: "black" }}>
-      <AppBar component="nav">
-        <Toolbar sx={{ bgcolor: "black" }}>
+    <Box sx={{ display: 'flex', bgcolor: "black", }}>
+      <AppBar component="nav" sx={{ boxShadow: "0" }}>
+        <Toolbar sx={{ bgcolor: "white", color: 'black', borderBottom: "1px lightgrey solid" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: 'none' }, boxShadow: "0" }}
           >
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' } }}>
-            Kenny Inc.
+            component={"a"} variant="h6" href="/"
+            // component="div"
+            sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block' }, ml: { xs: "auto", md: "70px" } }}>
+            <img src={process.env.PUBLIC_URL + '/mylogo.png'} width="30px" height={'30px'} alt='Kenny Dev.' />
           </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map(({item,link}) => (
-              <Link to={link}><Button key={item} sx={{ color: '#fff' }}>
-              {item}
-            </Button></Link>
+          <Box sx={{ display: { xs: 'none', sm: 'block' }, mr: { xs: "auto", md: "70px" } }}>
+            {navItems.map(({ item, link }) => (
+              <Link to={link} ><Button key={item} sx={{ color: '#000', mx: '30px' }}>
+                {item}
+              </Button></Link>
             ))}
           </Box>
         </Toolbar>
