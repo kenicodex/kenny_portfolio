@@ -111,7 +111,7 @@ export default function ContactUs() {
           <Group mt="xl">{icons}</Group>
         </div>
         <motion.div intial={{ opacity: 0 }} animate={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: .3 }} >
-          <form className={classes.form} action="mailto:">
+          <form className={classes.form} action={"mailto:kehindesalaudeen222@gmail.com?subject="+fields.subject+"&body="+fields.message}>
             <motion.div intial={{ opacity: 0 }} animate={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: .3 }} >
               <TextInput onChange={(e) => { info(e) }}
                 label="Name" name='name' value={fields.name}
@@ -127,13 +127,13 @@ export default function ContactUs() {
               classNames={{ input: classes.input, label: classes.inputLabel }}
             />
             <TextInput onChange={(e) => { info(e) }}
-              label="Subject" name='subject' value={fields.name}
+              label="Subject" name='subject' value={fields.subect}
               placeholder="Request to join a project"
               mt="md"
               classNames={{ input: classes.input, label: classes.inputLabel }}
             />
             <Textarea onChange={(e) => { info(e) }}
-              required name='message' value={fields.name}
+              required name='message' value={fields.message}
               label="Your message"
               placeholder="Hello kehinde, i would like you to join my team on a project"
               minRows={4}
@@ -142,7 +142,7 @@ export default function ContactUs() {
             />
 
             <Group position="right" mt="md">
-              <Button className={classes.control}>Send message</Button>
+              <Button className={classes.control} type='submit'>Send message</Button>
             </Group>
           </form>
         </motion.div>
