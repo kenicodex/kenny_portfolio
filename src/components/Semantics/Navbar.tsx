@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 export const navItems = [{ item: 'Home', link: "/" },
-{ item: 'Projects', link: "/todolist" },
+{ item: 'Projects', link: "#projects" },
 { item: 'About', link: "/" }, { item: 'Contact', link: "#contact" }];
 
 interface Props {

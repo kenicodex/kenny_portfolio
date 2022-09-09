@@ -7,11 +7,11 @@ import Navbar from "../Semantics/Navbar.tsx";
 import Header from './Header/Header';
 import ContactUs from './Contact/Contact';
 import { About } from './About/About';
-import { DivSplit } from './Split/Split';
 import Skills from './Skills/Skills';
 import Footer from './Footer/Footer';
 import Projects from './Projects/Projects';
 import { Box } from '@mui/material';
+// import { Experience } from './Experience/Experince';
 function Portfolio() {
   // const ref = React.useRef(null)
   // const [bool, setBool] = useState([false, false])
@@ -93,7 +93,7 @@ function Portfolio() {
       <Navbar />
       <About />
       <Projects />
-      <DivSplit />
+      {/* <Experience /> */}
       <Skills />
       <ContactUs id='contact' /> 
       <Footer />

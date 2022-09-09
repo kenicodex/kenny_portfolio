@@ -1,6 +1,7 @@
 import { createStyles, Anchor, Group, ActionIcon } from '@mantine/core';
-import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
+// import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
 import { navItems } from '../../Semantics/Navbar.tsx';
+import { social } from '../Contact/Contact';
 // import { MantineLogo } from '@mantine/ds';
 
 const useStyles = createStyles((theme) => ({
@@ -76,15 +77,19 @@ export default function Footer() {
                 <Group className={classes.links}>{items}</Group>
 
                 <Group spacing="xs" position="right" noWrap>
-                    <ActionIcon size="lg" variant="default" radius="xl">
-                        <IconBrandTwitter size={18} stroke={1.5} />
-                    </ActionIcon>
-                    <ActionIcon size="lg" variant="default" radius="xl">
+                    {social.map(({Icon,link})=>{
+                        return(
+                            <ActionIcon size="lg" component='a' href={link} variant="default" radius="xl">
+                                <Icon size={18} stroke={1.5} />
+                            </ActionIcon>
+                        )
+                    })}
+                    {/* <ActionIcon size="lg" variant="default" radius="xl">
                         <IconBrandYoutube size={18} stroke={1.5} />
                     </ActionIcon>
                     <ActionIcon size="lg" variant="default" radius="xl">
                         <IconBrandInstagram size={18} stroke={1.5} />
-                    </ActionIcon>
+                    </ActionIcon> */}
                 </Group>
             </div>
         </div>

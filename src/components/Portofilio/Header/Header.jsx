@@ -1,4 +1,5 @@
 import { createStyles, Overlay, Container, Title, Button, Text } from '@mantine/core';
+import { motion } from 'framer-motion';
 
 const useStyles = createStyles((theme) => ({
   hero: {
@@ -11,9 +12,9 @@ const useStyles = createStyles((theme) => ({
 
   container: {
     height: '95vh',
-    display: 'flex', 
+    display: 'flex',
     flexDirection: 'column',
-    justifyContent:"center",
+    justifyContent: "center",
     alignItems: 'flex-start',
     // paddingBottom: theme.spacing.xl * 6,
     zIndex: 1,
@@ -29,7 +30,7 @@ const useStyles = createStyles((theme) => ({
     color: theme.white,
     fontSize: 70,
     fontWeight: 300,
-    lineHeight: 1.1, marginTop:"22vh",
+    lineHeight: 1.1, marginTop: "22vh",
 
     [theme.fn.smallerThan('sm')]: {
       fontSize: 60,
@@ -44,7 +45,7 @@ const useStyles = createStyles((theme) => ({
 
   description: {
     color: theme.white,
-    maxWidth: 600, opacity:.6,
+    maxWidth: 600, opacity: .6,
 
     [theme.fn.smallerThan('sm')]: {
       maxWidth: '100%',
@@ -61,6 +62,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+const myname = 'Kehinde Salaudeen'
 export default function Header() {
   const { classes } = useStyles();
 
@@ -72,15 +74,17 @@ export default function Header() {
         zIndex={0}
       />
       <Container className={classes.container}>
-        <Title className={classes.title}>Kehinde Salaudeen</Title>
+        <Title className={classes.title}>
+          {myname.split('').map((x, i) => <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: i * .15 }}>{x}</motion.span>)}
+        </Title>
         <Text className={classes.description} size="xl" mt="xl">
-          Frontend Developer
+        <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{delay:.8, duration: 1}}>Frontend Developer</motion.span>
         </Text>
         <Text className={'text-white w-75'} size="md" mt="xl">
-         I'm a frontend developer interested in makin your digital experience exquisite. Basically, my aim is ti allow users easily navigate a web page and have smooth interactions.
+          I'm a frontend developer interested in makin your digital experience exquisite. Basically, my aim is ti allow users easily navigate a web page and have smooth interactions.
         </Text>
 
-        <Button variant="gradient" size="xl" radius="xl" className={classes.control}>
+        <Button variant="gradient" size="xl" radius="xl" className={classes.control} component='a' href='mailto:kehindesalaudeen222@gmail.com'>
           Lets Discuss
         </Button>
       </Container>

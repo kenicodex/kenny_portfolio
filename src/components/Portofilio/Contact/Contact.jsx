@@ -12,6 +12,7 @@ import {
 import { Box, Typography } from '@mui/material';
 import { IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons';
 import { motion } from 'framer-motion'
+export const social = [{Icon:IconBrandTwitter, link:'twitter.com/just_khenny'}, {Icon:IconBrandLinkedin, link:'https://www.linkedin.com/in/kehinde-salaudeen-39014b180'}, {Icon:IconBrandGithub, link:'github.com/kenicodex'} ];
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -76,13 +77,13 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const social = [IconBrandTwitter, IconBrandLinkedin, IconBrandGithub ];
+
 
 export default function ContactUs() {
   const { classes } = useStyles();
 
-  const icons = social.map((Icon, index) => (
-    <ActionIcon key={index} size={28} className={classes.social} variant="transparent">
+  const icons = social.map(({Icon,link}, index) => (
+    <ActionIcon component='a' href={link} key={index} size={28} className={classes.social} variant="transparent">
       <Icon size={22} stroke={1.5} />
     </ActionIcon>
   ));
@@ -96,15 +97,15 @@ export default function ContactUs() {
             Leave a message and i get back to you in less than 12 hours
           </Text>
           <Box>
-            <Typography component={'div'} fontSize="18px" sx={{mt:'10px'}} color={'white'}> @ Email <br /> <span style={{ fontSize: "15px" }}>kehindesalaudeen222@gmail.com</span> </Typography>
-            <Typography component={'div'} fontSize="18px" sx={{mt:'10px'}} color={'white'}> <i className='fa fa-phone'></i> Phone <br /> <span style={{ fontSize: "15px" }}>+2348056499531</span> </Typography>
+            <Typography href="mailto:kehindesalaudeen222@gmail.com" component={'a'} fontSize="18px" sx={{mt:'10px'}} color={'white'}> @ Email <br /> <span style={{ fontSize: "15px" }}>kehindesalaudeen222@gmail.com</span> </Typography>
+           <br /> <Typography href="tel:+2348056499531" component={'a'} fontSize="18px" sx={{mt:'10px'}} color={'white'}> <i className='fa fa-phone'></i> Phone <br /> <span style={{ fontSize: "15px" }}>+234-805-649-9531</span> </Typography>
           </Box>
           {/* <ContactIconsList variant="white" /> */}
 
           <Group mt="xl">{icons}</Group>
         </div>
         <motion.div intial={{ opacity: 0 }} animate={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: .3 }} >
-          <div className={classes.form}>
+          <form className={classes.form}>
         <motion.div intial={{ opacity: 0 }} animate={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: .3 }} >
             <TextInput
               label="Name"
@@ -137,7 +138,7 @@ export default function ContactUs() {
             <Group position="right" mt="md">
               <Button className={classes.control}>Send message</Button>
             </Group>
-          </div>
+          </form>
         </motion.div>
       </SimpleGrid>
     </Box>
