@@ -12,7 +12,8 @@ import {
 import { Box, Typography } from '@mui/material';
 import { IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons';
 import { motion } from 'framer-motion'
-export const social = [{Icon:IconBrandTwitter, link:'twitter.com/just_khenny'}, {Icon:IconBrandLinkedin, link:'https://www.linkedin.com/in/kehinde-salaudeen-39014b180'}, {Icon:IconBrandGithub, link:'github.com/kenicodex'} ];
+import { useState } from 'react';
+export const social = [{ Icon: IconBrandTwitter, link: 'twitter.com/just_khenny' }, { Icon: IconBrandLinkedin, link: 'https://www.linkedin.com/in/kehinde-salaudeen-39014b180' }, { Icon: IconBrandGithub, link: 'github.com/kenicodex' }];
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -82,14 +83,19 @@ const useStyles = createStyles((theme) => ({
 export default function ContactUs() {
   const { classes } = useStyles();
 
-  const icons = social.map(({Icon,link}, index) => (
+  const icons = social.map(({ Icon, link }, index) => (
     <ActionIcon component='a' href={link} key={index} size={28} className={classes.social} variant="transparent">
       <Icon size={22} stroke={1.5} />
     </ActionIcon>
   ));
-
+  const [fields, setFields] = useState({}) 
+  const info = (e) => {
+      setFields({
+        ...fields, [e.target.name] : e.target.value
+      })
+  }
   return (
-    <Box className={classes.wrapper + 'bg-dark'} sx={{width: { xs: "95%", md: "90%" }, mx: "auto", my:"20px"}}>
+    <Box className={classes.wrapper + 'bg-dark'} sx={{ width: { xs: "95%", md: "90%" }, mx: "auto", my: "20px" }}>
       <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
         <div>
           <Title className={classes.title}>Contact us</Title>
@@ -97,37 +103,37 @@ export default function ContactUs() {
             Leave a message and i get back to you in less than 12 hours
           </Text>
           <Box>
-            <Typography href="mailto:kehindesalaudeen222@gmail.com" component={'a'} fontSize="18px" sx={{mt:'10px'}} color={'white'}> @ Email <br /> <span style={{ fontSize: "15px" }}>kehindesalaudeen222@gmail.com</span> </Typography>
-           <br /> <Typography href="tel:+2348056499531" component={'a'} fontSize="18px" sx={{mt:'10px'}} color={'white'}> <i className='fa fa-phone'></i> Phone <br /> <span style={{ fontSize: "15px" }}>+234-805-649-9531</span> </Typography>
+            <Typography href="mailto:kehindesalaudeen222@gmail.com" component={'a'} fontSize="18px" sx={{ mt: '10px' }} color={'white'}> @ Email <br /> <span style={{ fontSize: "15px" }}>kehindesalaudeen222@gmail.com</span> </Typography>
+            <br /> <Typography href="tel:+2348056499531" component={'a'} fontSize="18px" sx={{ mt: '10px' }} color={'white'}> <i className='fa fa-phone'></i> Phone <br /> <span style={{ fontSize: "15px" }}>+234-805-649-9531</span> </Typography>
           </Box>
           {/* <ContactIconsList variant="white" /> */}
 
           <Group mt="xl">{icons}</Group>
         </div>
         <motion.div intial={{ opacity: 0 }} animate={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: .3 }} >
-          <form className={classes.form}>
-        <motion.div intial={{ opacity: 0 }} animate={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: .3 }} >
-            <TextInput
-              label="Name"
-              placeholder="John Doe"
-              mt="md"
-              classNames={{ input: classes.input, label: classes.inputLabel }}
-            /></motion.div>
-            <TextInput
-              label="Email"
+          <form className={classes.form} action="mailto:">
+            <motion.div intial={{ opacity: 0 }} animate={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: .3 }} >
+              <TextInput onChange={(e) => { info(e) }}
+                label="Name" name='name' value={fields.name}
+                placeholder="John Doe"
+                mt="md"
+                classNames={{ input: classes.input, label: classes.inputLabel }}
+              /></motion.div>
+            <TextInput onChange={(e) => { info(e) }}
+              label="Email" name='email' value={fields.email}
               placeholder="your@email.com"
               required
               mt="md"
               classNames={{ input: classes.input, label: classes.inputLabel }}
             />
-            <TextInput
-              label="Subject"
+            <TextInput onChange={(e) => { info(e) }}
+              label="Subject" name='subject' value={fields.name}
               placeholder="Request to join a project"
               mt="md"
               classNames={{ input: classes.input, label: classes.inputLabel }}
             />
-            <Textarea
-              required
+            <Textarea onChange={(e) => { info(e) }}
+              required name='message' value={fields.name}
               label="Your message"
               placeholder="Hello kehinde, i would like you to join my team on a project"
               minRows={4}
