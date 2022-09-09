@@ -24,22 +24,23 @@ export function About() {
       <Grid item xs={12} lg={6.5}>
         <motion.div initial={{x:-300, opacity:0}} whileInView={{x:0, opacity:1}} viewport={{once:true}} transition={{delay:.5, duration:1}}>
         <Item>
-          <Text weight={300} size="40px" mb={6}>
+          <Text weight={300} size="40px" mb={30}>
             Get to know me
           </Text>
-          <Text weight={500} size="lg" mb={10} >
+          <Text weight={500} size="lg" mb={50} >
             Young Programmer
           </Text>
           <Text weight={200} size="12px" mb={15} color="black">
-            Hi there, i'm kenny a young and enthusiatic problem solver. My journey as a Frontend Developer started back in my undergraduate program (i actually just finished school august 2022 &#128514;). Discovered coding in my first
-            year and now its a hobby, designing with logical and presise words. Asides coding i am fully involved in human conversations (no i'm not an introvert). You know what we can friends, why not justv WhatsApp me below
+            Hi there, i'm kenny a young and enthusiatic problem solver. My journey as a Frontend Developer started back in my undergraduate program. Discovered coding in my first
+            year and now its a hobby, designing with logical and precise defined keywords. Many skills include HTML CSS and JavaScript, ReactJS, Redux State Management, NextJS and NodeJS. 
+            {/* You know what we can friends, why not justv WhatsApp me below */}
           </Text>
-          <div className="input-group mb-3">
+          {/* <div className="input-group mb-3">
             <input type="text" className="form-control" placeholder="Hey kenny, i'm ... let's connect" aria-label="Hey kenny, i'm ... let's connect" aria-describedby="basic-addon2" />
             <div className="input-group-append">
               <button className="btn btn-outline-secondary rounded-right" type="button">WhatsApp Me</button>
             </div>
-          </div>
+          </div> */}
 
         </Item>
         </motion.div>
