@@ -1,0 +1,110 @@
+.iconSkill {
+	transform: rotateY(45deg);
+    
+	animation: rotateAnimation 1s linear infinite ;
+}
+
+@keyframes rotateAnimation {
+	from {transform: rotateY(45deg);}
+	to {transform: rotateY(225deg);}
+}
+
+
+* {
+    --image-1: url("https://firebasestorage.googleapis.com/v0/b/codeible.appspot.com/o/_coursefiles%2Fres%2FPure%20CSS%3A%203D%20Rotating%20Cube%20Art%20Gallery%2Fsample_image_1.jpg?alt=media&token=ab289a4d-28df-419e-8392-b7131a58cbd7");
+    --image-2: url("https://firebasestorage.googleapis.com/v0/b/codeible.appspot.com/o/_coursefiles%2Fres%2FPure%20CSS%3A%203D%20Rotating%20Cube%20Art%20Gallery%2Fsample_image_2.jpg?alt=media&token=56847d14-7337-4d7c-b0b4-ec6444cef60a");
+    --image-3: url("https://firebasestorage.googleapis.com/v0/b/codeible.appspot.com/o/_coursefiles%2Fres%2FPure%20CSS%3A%203D%20Rotating%20Cube%20Art%20Gallery%2Fsample_image_3.jpg?alt=media&token=4b1a7a35-5c03-4b4b-9e1d-afec6d2465ca");
+    --image-4: url("https://firebasestorage.googleapis.com/v0/b/codeible.appspot.com/o/_coursefiles%2Fres%2FPure%20CSS%3A%203D%20Rotating%20Cube%20Art%20Gallery%2Fsample_image_4.jpg?alt=media&token=ee68be8f-5d7f-4546-8d6a-6cf43786db98");
+    --image-5: url("https://firebasestorage.googleapis.com/v0/b/codeible.appspot.com/o/_coursefiles%2Fres%2FPure%20CSS%3A%203D%20Rotating%20Cube%20Art%20Gallery%2Fsample_image_5.jpg?alt=media&token=91650a12-efc8-4027-9ada-57c4a9af7b69");
+    --image-6: url("https://firebasestorage.googleapis.com/v0/b/codeible.appspot.com/o/_coursefiles%2Fres%2FPure%20CSS%3A%203D%20Rotating%20Cube%20Art%20Gallery%2Fsample_image_6.jpg?alt=media&token=d83a0051-7e6e-41c3-9a8d-c028e0a31069");
+}
+
+/* body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+} */
+
+
+.cube-container {
+    /* width: 15em;
+    height: 15em; */
+    text-align: center;
+    perspective: 45em;
+}
+
+.cube {
+    /* width: 100%;
+    height: 100%; */
+    position: relative;
+    transform-style: preserve-3d;
+    transition-duration: 2s;
+}
+
+.cube-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid black;
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.radio-button {
+    margin-bottom: 5em;
+}
+
+.cube-side:nth-child(1) {
+    transform: rotateY(0deg) translateZ(7.5em);
+    background-image: var(--image-1);
+
+}
+.cube-side:nth-child(2) {
+    transform: rotateY(90deg) translateZ(7.5em);
+    background-image: var(--image-2);
+}
+.cube-side:nth-child(3) {
+    transform: rotateY(180deg) translateZ(7.5em);
+    background-image: var(--image-3);
+}
+.cube-side:nth-child(4) {
+    transform: rotateY(-90deg) translateZ(7.5em);
+    background-image: var(--image-4);
+}
+.cube-side:nth-child(5) {
+    transform: rotateX(-90deg) translateZ(7.5em);
+    background-image: var(--image-5);
+}
+.cube-side:nth-child(6) {
+    transform: rotateX(90deg) translateZ(7.5em);
+    background-image: var(--image-6);
+}
+
+
+.radio-button:checked ~ .cube {
+    transition-duration: 3s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+.radio-button:nth-child(1):checked ~ .cube { 
+    transform: rotateX(-15deg) rotateY(20deg);
+}
+.radio-button:nth-child(2):checked ~ .cube { 
+    transform: rotateX(-15deg) rotateY(180deg);
+}
+.radio-button:nth-child(3):checked ~ .cube { 
+    transform: rotateX(-15deg) rotateY(90deg);
+}
+.radio-button:nth-child(4):checked ~ .cube { 
+    transform: rotateX(-15deg) rotateY(-90deg);
+}
+.radio-button:nth-child(5):checked ~ .cube { 
+    transform: rotateX(-105deg) rotateY(0deg);
+}
+.radio-button:nth-child(6):checked ~ .cube { 
+    transform: rotateX(75deg) rotateY(0deg);
+}

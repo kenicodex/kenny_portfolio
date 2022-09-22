@@ -8,8 +8,8 @@ import Header from './Header/Header';
 import ContactUs from './Contact/Contact';
 import { About } from './About/About';
 import Skills from './Skills/Skills';
-import Footer from './Footer/Footer';
 import Projects from './Projects/Projects';
+import Footer from './Footer/Footer';
 import { Box } from '@mui/material';
 // import { Experience } from './Experience/Experince';
 function Portfolio() {
@@ -87,10 +87,12 @@ function Portfolio() {
     //     })}
     //   </Box>
     // </Box>
-    <Box className='bg-dark' >
+    <Box className='bgdark' >
       {/* Introduction */}
-      <Header />
       <Navbar />
+      <Header />
+      {/* <body className="u-body u-xl-mode" data-lang="en"> */}
+      {/* </body> */}
       <About />
       <Projects />
       {/* <Experience /> */}

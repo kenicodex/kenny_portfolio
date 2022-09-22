@@ -11,7 +11,7 @@ const useStyles = createStyles((theme) => ({
   },
 
   container: {
-    height: '95vh',
+    height: '100vh',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: "center",
@@ -28,9 +28,9 @@ const useStyles = createStyles((theme) => ({
 
   title: {
     color: theme.white,
-    fontSize: 70,
+    fontSize: '7em',
     fontWeight: 300,
-    lineHeight: 1.1, marginTop: "22vh",
+    lineHeight: 1.1,
 
     [theme.fn.smallerThan('sm')]: {
       fontSize: 60,
@@ -78,15 +78,21 @@ export default function Header() {
           {myname.split('').map((x, i) => <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: i * .15 }}>{x}</motion.span>)}
         </Title>
         <Text className={classes.description} size="xl" mt="xl">
-        <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{delay:.8, duration: 1}}>Frontend Developer</motion.span>
+          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .8, duration: 1 }}>Frontend Developer</motion.span>
         </Text>
-        <Text className={'text-white w-75'} size="md" mt="xl">
-          I'm a frontend developer interested in makin your digital experience exquisite. Basically, my aim is ti allow users easily navigate a web page and have smooth interactions.
+        <Text className={'text-white w-75'} size="1.5rem" mt="xl">
+          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2, duration: 2 }}>
+            Highly capable 3 years FrontEnd Developer, always ready to learn offering multilingual programming,
+            Creation of reusable components with <motion.span initial={{ color:'pink'}} animate={{ color: 'white' }} transition={{ duration: 1, repeat: 50 }}>React</motion.span>, increasing team productivity.
+            Expert developer well-versed in Agile and Scrum methodologies
+          </motion.span>
         </Text>
 
-        <Button variant="gradient" size="xl" radius="xl" className={classes.control} component='a' href='mailto:kehindesalaudeen222@gmail.com'>
-          Lets Discuss
-        </Button>
+        <motion.div initial={{ x: '100' }} animate={{ x: 0 }} transition={{ delay: 0, duration: 1, repeat: 4 }} style={{width:'100%'}}>
+          <Button variant="gradient" size="xl" radius="xl" className={classes.control} component='a' style={{ margin: '1.2rem 0' }} href='mailto:kehindesalaudeen222@gmail.com'>
+            Lets Discuss
+          </Button>
+        </motion.div>
       </Container>
     </div>
   );

@@ -13,15 +13,15 @@ import { Box, Typography } from '@mui/material';
 import { IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons';
 import { motion } from 'framer-motion'
 import { useState } from 'react';
-export const social = [{ Icon: IconBrandTwitter, link: 'twitter.com/just_khenny' }, { Icon: IconBrandLinkedin, link: 'https://www.linkedin.com/in/kehinde-salaudeen-39014b180' }, { Icon: IconBrandGithub, link: 'github.com/kenicodex' }];
+export const social = [{ Icon: IconBrandTwitter, link: 'https://www.twitter.com/just_khenny' }, { Icon: IconBrandLinkedin, link: 'https://www.linkedin.com/in/kehinde-salaudeen-39014b180' }, { Icon: IconBrandGithub, link: 'https://www.github.com/kenicodex' }];
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
     minHeight: 400,
     boxSizing: 'border-box',
-    // backgroundImage: `linear-gradient(-60deg, ${theme.colors[theme.primaryColor][4]} 0%, ${theme.colors[theme.primaryColor][7]
-    //   } 100%)`,
-    // borderRadius: theme.radius.md,
+    backgroundImage: `linear-gradient(-60deg, ${theme.colors[theme.primaryColor][6]} 0%, ${theme.colors[theme.primaryColor][7]
+      } 100%)`,
+    borderRadius: theme.radius.md,
     padding: theme.spacing.xl * 2.5,
 
     [`@media (max-width: ${theme.breakpoints.sm}px)`]: {
@@ -95,7 +95,7 @@ export default function ContactUs() {
       })
   }
   return (
-    <Box className={classes.wrapper + 'bg-dark'} sx={{ width: { xs: "95%", md: "90%" }, mx: "auto", my: "20px" }}>
+    <Box className={classes.wrapper} sx={{ width: { xs: "95%", md: "90%" }, mx: "auto", my: "20px" }}>
       <SimpleGrid cols={2} spacing={50} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
         <div>
           <Title className={classes.title}>Contact us</Title>

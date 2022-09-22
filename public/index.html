@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/mylogo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
+  <meta name="theme-color" content="black" />
   <meta name="description" content="Kenny – Frontend Developer and Digital experience engineer. Take a tour and get to know" />
   <meta name="title" content="Kenny – Frontend Developer and Digital experience engineer." />
   <meta property="og:type" content="website" />
@@ -19,6 +19,7 @@
 
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/mylogo.png" />
   <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="style.css">
   <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -28,8 +29,21 @@
   <title>Kenny Dev.</title>
 </head>
 
-<body style="transition: ease 0.5s;">
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+<body >
+  <style>
+    *{
+      box-sizing: inherit;
+    }
+    html{
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -ms-box-sizing:border-box;
+      font-size: 62.5%;
+    }
+  </style>
+  <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+  <script src="jquery.js"></script>
+  <script src="main.js"></script>
   <div id="root"></div>
 </body>
 
