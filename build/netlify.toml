@@ -38,3 +38,7 @@
   from = "/astalavee"
   to = "/index.html"
   status = 200
+[[redirects]]
+  from = "/resume"
+  to = "/index.html"
+  status = 200

@@ -80,19 +80,18 @@ export default function Header() {
         <Text className={classes.description} size="xl" mt="xl">
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .8, duration: 1 }}>Frontend Developer</motion.span>
         </Text>
-        <Text className={'text-white w-75'} size="1.5rem" mt="xl">
+        <Text className={'text-white w-75'} size="1.5rem" mt="xl" style={{textAlign:'justify'}}>
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2, duration: 2 }}>
-            Highly capable 3 years FrontEnd Developer, always ready to learn offering multilingual programming,
-            Creation of reusable components with <motion.span initial={{ color:'pink'}} animate={{ color: 'white' }} transition={{ duration: 1, repeat: 50 }}>React</motion.span>, increasing team productivity.
-            Expert developer well-versed in Agile and Scrum methodologies
+          Detail-oriented and qualified 𝐅𝐫𝐨𝐧𝐭𝐞𝐧𝐝 Developer able to collaborate with a team with 3+ 𝐲𝐞𝐚𝐫s experience with JavaScript libraries 𝐑𝐞𝐚𝐜𝐭, jQuery, and Bootstrap, able to work in an agile scrum environment. I help companies like Matrizo, Devken, and Lagos State Polytechnic build the client-side for web applications and to translate UI/UX design wireframes for company and customer needs into functional, user-friendly, and appealing interactive applications.
           </motion.span>
         </Text>
 
         <motion.div initial={{ x: '100' }} animate={{ x: 0 }} transition={{ delay: 0, duration: 1, repeat: 4 }} style={{width:'100%'}}>
-          <Button variant="gradient" size="xl" radius="xl" className={classes.control} component='a' style={{ margin: '1.2rem 0' }} href='mailto:kehindesalaudeen222@gmail.com'>
-            Lets Discuss
+          <Button variant="gradient" size="xl" radius="xl" className={classes.control} component='a' style={{ margin: '1.2rem 0' }} href='/resume'>
+            View My Resume  
           </Button>
         </motion.div>
+
       </Container>
     </div>
   );

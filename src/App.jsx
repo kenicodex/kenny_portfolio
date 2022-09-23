@@ -21,6 +21,7 @@ import Astalavee from "./components/Astalavee/Astalavee";
 import Login from "./components/Astalavee/Auth/Login";
 import Signup from "./components/Astalavee/Auth/Signup";
 import Profille from "./components/Astalavee/Profile/Profille";
+import Resume from "./components/Portofilio/Resume/Resume";
 
 let persistor = persistStore(store);
 function App(props ) {
@@ -45,6 +46,7 @@ function App(props ) {
                     <Route path="/astalavee/login" element={<Login />}  />
                     <Route path="/astalavee/signup" element={<Signup />}  />
                     <Route path="/astalavee/userprofile" element={<Profille />}  />
+                    <Route path="/resume" element={<Resume />}  />
                 </Routes>
             </BrowserRouter>
             </PersistGate>
