@@ -13,7 +13,7 @@ import { Box, Typography } from '@mui/material';
 import { IconBrandTwitter, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons';
 import { motion } from 'framer-motion'
 import { useState } from 'react';
-export const social = [{ Icon: IconBrandTwitter, link: 'https://www.twitter.com/just_khenny' }, { Icon: IconBrandLinkedin, link: 'https://www.linkedin.com/in/kehinde-salaudeen-39014b180' }, { Icon: IconBrandGithub, link: 'https://www.github.com/kenicodex' }];
+export const social = [{ Icon: IconBrandTwitter, link: 'https://www.twitter.com/just_khenny' }, { Icon: IconBrandLinkedin, link: 'https://www.linkedin.com/in/kehnydev/' }, { Icon: IconBrandGithub, link: 'https://www.github.com/kenicodex' }];
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -124,6 +124,7 @@ export default function ContactUs() {
               placeholder="your@email.com"
               required
               mt="md"
+              aria-autocomplete='inline'
               classNames={{ input: classes.input, label: classes.inputLabel }}
             />
             <TextInput onChange={(e) => { info(e) }}
