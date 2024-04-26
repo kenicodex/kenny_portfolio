@@ -9,12 +9,12 @@ import './style.css'
 function Skills() {
   // const dots = ['.', '.', '.']
   const skills = [
-    { icon: <TbBrandHtml5 size={'4rem'} />, lang: 'HTML', des: "" },
-    { icon: <TbBrandCss3 size={'4rem'} />, lang: 'CSS', des: "" },
-    { icon: <TbBrandJavascript size={'4rem'} />, lang: 'JavaScript', des: "" },
-    { icon: <SiTypescript size={'4rem'} />, lang: 'TypeScript', des: "" },
-    { icon: <GrReactjs size={'4rem'} />, lang: 'React', des: "" },
-    { icon: <SiRedux size={'4rem'} />, lang: 'Redux Toolkit' }]
+    { icon: <TbBrandHtml5 size={'8rem'} />, lang: 'HTML', des: "" },
+    { icon: <TbBrandCss3 size={'8rem'} />, lang: 'CSS', des: "" },
+    { icon: <TbBrandJavascript size={'8rem'} />, lang: 'JavaScript', des: "" },
+    { icon: <SiTypescript size={'8rem'} />, lang: 'TypeScript', des: "" },
+    { icon: <GrReactjs size={'8rem'} />, lang: 'React', des: "" },
+    { icon: <SiRedux size={'8rem'} />, lang: 'Redux Toolkit' }]
   return (
 
     // <motion.div
@@ -38,25 +38,22 @@ function Skills() {
       {/* ======= Featured Services Section ======= */}
       <section id="featured-services" className="featured-services">
         <div className="container" data-aos="fade-up">
-          <div className="row">
+          <div className="flex justify-evenly ">
             {skills.map(x => {
               return (
-                <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-                  <div className="icon-box" data-aos="fade-up" data-aos-delay={100} style={{ height: '80%', width: '100%', margin: '1rem' }}>
-                    {/* <motion.div initial={{rotate:0}} animate={{ rotate: 360 }} transition={{  repeat: Infinity, stiffness:'spring', ease:'easeInOut' }}> */}
-                    <div className="icon iconSkill" style={{ textAlign: 'center' }}>
-                      {/* <i className="bx bxl-dribbble" /> */}
+               <>
+                {/* <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                  <div className="icon-box" data-aos="fade-up" data-aos-delay={100} style={{ height: '80%', width: '100%', margin: '1rem' }}> */}
+                    <div className="icon  " style={{ textAlign: 'center' }}>
                       {x.icon}
                     </div>
-                    {/* </motion.div> */}
                     <h4 className="title" style={{ textAlign: 'center' }}>
-                      <a href="/">{x.lang}</a>
+                      {/* <a href="/">{x.lang}</a> */}
                     </h4>
-                    <p className="description">
-                      {x.des}
-                    </p>
-                  </div>
-                </div>
+             
+                  {/* </div>
+                </div> */}
+               </>
               )
             })}
             {/* <div className="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
