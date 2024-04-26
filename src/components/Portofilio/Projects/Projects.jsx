@@ -3,7 +3,7 @@ import { Image, Text, Container, ThemeIcon, Title, SimpleGrid, createStyles, Box
 // import IMAGES from './images';
 
 const project = [
-  { project: 'Ecommerce Site', img: process.env.PUBLIC_URL + '/images/ecommerce.png', link: '/fakestore', description: 'Built Using React', },
+  { project: 'Ecommerce Site', img: process.env.PUBLIC_URL + '/images/ecommerce.png', link: '/fakestore', description: 'Built Using React Native', },
   { project: 'Weather App', img: process.env.PUBLIC_URL + '/images/WeatherApp.png', link: '/weatherapp', description: 'Built Using React' },
   { project: 'Todolist App', img: process.env.PUBLIC_URL + '/images/todolist.png', link: '/todolist', description: 'Built Using React' },
   { project: 'Movie Trailer Finder', img: process.env.PUBLIC_URL + '/images/movies.png', link: '/movies', description: 'Built Using React' },

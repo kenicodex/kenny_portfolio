@@ -85,7 +85,7 @@ export default function Header() {
         <Text className={'text-white w-75'} size="1.5rem" mt="xl" style={{ textAlign: 'justify' }}>
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2, duration: 2 }}>
             Detail-oriented and qualified 𝐅𝐫𝐨𝐧𝐭𝐞𝐧𝐝 Developer able to collaborate with a team, 
-            <Show text='3+ 𝐲𝐞𝐚𝐫s' /> experience with JavaScript libraries 𝐑𝐞𝐚𝐜𝐭,
+            <Show text='3+ 𝐲𝐞𝐚𝐫s' /> experience with JavaScript libraries 𝐑𝐞𝐚𝐜𝐭, React native,
              jQuery, and Bootstrap, able to work in an 𝐚𝐠𝐢𝐥𝐞 𝐬𝐜𝐫𝐮𝐦 environment. 
              I help companies like ReachAfrika (Fintech), Tourbounty (Social Media), 
              and Quantum Analytics(EdTech) to build client-side web applications and to 

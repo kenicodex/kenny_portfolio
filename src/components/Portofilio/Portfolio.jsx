@@ -11,6 +11,7 @@ import Skills from './Skills/Skills';
 import Projects from './Projects/Projects';
 import Footer from './Footer/Footer';
 import { Box } from '@mui/material';
+import WorkExperience from './WorkExperience./index.jsx';
 // import { Experience } from './Experience/Experince';
 function Portfolio() {
   // const ref = React.useRef(null)
@@ -94,6 +95,7 @@ function Portfolio() {
       {/* <body className="u-body u-xl-mode" data-lang="en"> */}
       {/* </body> */}
       <About />
+      <WorkExperience />
       <Projects />
       {/* <Experience /> */}
       <Skills />

@@ -16,7 +16,7 @@ function Store(params) {
         if (res.ok) {
             getData = res.json()
             return getData
-        } else { 
+        } else {
             return false
         }
     }
@@ -35,7 +35,12 @@ function Store(params) {
             <Message show={state.find(x => x.id === product.id) !== undefined} severity="success" message="Item added successfully" />
             <EcomLayout>
                 <Header />
-                <Box sx={{ height: "400px", display: 'flex', flexDirection: { xs: "column", lg: "row" }, justifyContent: "space-evenly", alignItems: "center" }} className="bg-white">
+                <Box sx={{
+                    height: "100vh", display: 'flex',
+                    flexDirection: { xs: "column", lg: "row" },
+                    justifyContent: "space-evenly",
+                    alignItems: "center", py:'100px'
+                }} className="bg-white">
                     <Box sx={{ width: { xs: "100%", lg: "48%" }, height: { xs: "auto", lg: "370px" }, justifyContent: "center", alignItems: "center" }} className="d-flex" >
                         <Typography fontSize={{ xs: "25px", lg: "40px" }} fontWeight="600" fontFamily={"open sans"} component="div" sx={{ width: { xs: "80%", lg: "80%" } }} className="text-primary" >
                             With ease from your remote location make orders and purschase products

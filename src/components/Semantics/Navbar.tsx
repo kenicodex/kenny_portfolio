@@ -63,7 +63,7 @@ export default function Navbar(props: Props) {
   return (
     <Box sx={{ display: 'flex', bgcolor: "black", fontSize:'1.4rem'}}>
       <AppBar component="nav" sx={{ boxShadow: "0" }}>
-        <Toolbar sx={{ bgcolor: "white", color: 'black', borderBottom: "1px lightgrey solid" }}>
+        <Toolbar sx={{ bgcolor: "black", color: 'white', borderBottom: "1px lightgrey solid" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -80,7 +80,7 @@ export default function Navbar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' }, mr: { xs: "auto", md: "7rem" } }}>
             {navItems.map(({ item, link }) => (
-              <Button key={item} sx={{ color: '#000', mx: '30px',fontSize:'1.4rem'}}>
+              <Button key={item} sx={{ color: '#FFF', mx: '30px',fontSize:'1.4rem'}}>
                 {item}
               </Button>
             ))}

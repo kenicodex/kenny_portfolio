@@ -120,18 +120,18 @@ export function About() {
         </Badge>
       </Group>
 
-      <Title order={2} className={classes.title} align="center" mt="sm">
+      {/* <Title order={2} className={classes.title} align="center" mt="sm">
         I have been able to work in these organisations
-      </Title>
+      </Title> */}
 
 
       <Text color="dimmed" className={classes.description} align="center" mt="md">
         Software Engineer (Frontend)
       </Text>
 
-      <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
+      {/* <SimpleGrid cols={3} spacing="xl" mt={50} breakpoints={[{ maxWidth: 'md', cols: 1 }]}>
         {features}
-      </SimpleGrid>
+      </SimpleGrid> */}
     </Container>
   );
 }
