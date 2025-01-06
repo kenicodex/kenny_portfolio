@@ -1,5 +1,5 @@
 import { createStyles, Overlay, Container, Title, Button, Text } from '@mantine/core';
-import { Typography } from '@mui/material';
+
 import { motion } from 'framer-motion';
 
 const useStyles = createStyles((theme) => ({
