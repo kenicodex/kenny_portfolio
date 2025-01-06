@@ -92,7 +92,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-export function About() {
+export default function About() {
   const { classes } = useStyles();
   // const features = mockdata.map((feature, i) => (
   //   <motion.span key={feature.title} initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: .1, duration: 1 }}>

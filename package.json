@@ -19,6 +19,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "classnames": "^2.3.1",
+    "firebase": "^10.11.1",
     "framer-motion": "^7.2.0",
     "grapesjs-preset-webpage": "^0.1.11",
     "jquery": "^3.6.0",

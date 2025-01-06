@@ -1,7 +1,7 @@
 import { Text } from '@mantine/core'
 import { Box } from '@mui/material'
 import React from 'react'
-import './welcome.css'
+// import './welcome.css'
 import { motion } from 'framer-motion'
 
 function Welcome() {

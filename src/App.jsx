@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Portfolio from "./components/Portofilio/Portfolio";
+import Portfolio from "./components/Portofilio/";
 import Todolist from "./components/Todolist/TodoList";
 import { Provider } from "react-redux";
 import Movies from "./components/Movies/Movies.jsx";
